@@ -1,4 +1,4 @@
-O trabalho realizado ao longo da licenciatura em Engenharia de Computadores e Informática por:
+O trabalho realizado ao longo da Licenciatura em Engenharia de Computadores e Informática por:
 
   -Francisco Ribeiro
   
