@@ -1,0 +1,517 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+    /*border: 1px solid red;*/
+}
+
+/************************************************Cabeçalho******************************************************/
+
+.titulo {
+    text-align: center;
+    padding: 40px;
+    color: rgb(205,205,205);
+    background-color: #000000;
+    top: 0;
+    transition: 0.2s;
+}
+
+.titulo h2 {
+    font-weight: bold;
+    font-size: 50px;
+}
+
+/*************************************************************Nav Bar********************************************/
+
+.barra {
+    display: flex;
+    height: 80px;
+    justify-content: space-around;
+    background-color: #262626;
+    border-style: solid;
+    border-color: #000000;
+}
+
+.img-logo img {
+    width: 76px;
+    height: 76px;
+}
+
+.nav-header {
+    display: flex;
+    align-items: center;
+}
+
+.btn-menu {
+    display: none;
+    align-items: center;
+}
+
+
+.nav-header ul {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.nav-header ul li {
+    height: 70px;
+    display: inline;
+    padding: 0px 5px;
+}
+
+
+.nav-header ul li a {
+    text-decoration: none;
+    padding: 20px 60px 20px 60px;
+    color: rgb(205,205,205);
+}
+
+.nav-header ul li a:hover {
+    color: #262626;
+    background-color: rgb(205,205,205);
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px 2px;
+}
+
+.btn-close-menu {
+    text-align: right;
+    padding-right: 15px;
+    display: none;
+}
+
+.sobrebtn {
+    display: flex;
+    align-items: center;
+}
+
+.sobrebtn input{
+    width: 100px;
+    height: 40px;
+}
+
+/*****************************************Dicas e Estatistica*****************************/
+
+.imgfundo1, .imgfundo2, .imgfundo3, .imgfundo5, .imgfundo9 {
+    position: relative;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+}
+
+.imgfundo1 {
+    background-image: url(../images/imgfundo1.jpg);
+}
+
+.imgfundo2 {
+    background-image: url(../images/imgfundo2.jpg);
+}
+
+.imgfundo3 {
+    background-image: url(../images/imgfundo3.jpg);
+}
+
+.imgfundo5 {
+    background-image: url(../images/imgfundo5.jpg);
+}
+
+.imgfundo9 {
+    background-image: url(../images/imgfundo9.jpg);
+}
+
+.caixa1 h3 {
+    padding: 10px 20px;
+    color: #fff;
+	background-color: #111;
+}
+
+.caixa1 p {
+    color: rgb(205,205,205);
+    padding: 25px 15px 0px 15px;
+    font-size: large;
+}
+
+
+.caixa1 {
+    text-align: center;
+    border-style: solid;
+    border-color: #000000;
+    padding: 100px;
+    background-color: #262626;
+}
+
+.caixa1-conteudo {
+    padding: 20px;
+}
+
+.caixa2 h3 {
+    padding: 10px 20px;
+    color: #fff;
+	background-color: #111;
+}
+
+.caixa2 p {
+    color: #cdcdcd;
+    padding: 25px 15px 0px 15px;
+    font-size: large;
+}
+
+.caixa2 ol {
+    color: rgb(205,205,205);
+    padding: 25px 60px ;
+    font-size: large;
+    text-align: left;
+}
+
+.caixa2 {
+    text-align: center;
+    border-style: solid;
+    border-color: #000000;
+    padding: 100px;
+    background-color: #262626;
+}
+
+.caixa2-conteudo {
+    padding: 20px;
+}
+
+.caixa3 h3 {
+    padding: 10px 20px;
+    color: #fff;
+	background-color: #111;
+}
+
+.caixa3 p {
+    color: rgb(205,205,205);
+    padding: 25px 15px 0px 15px;
+    font-size: large;
+}
+
+.caixa3 ol {
+    color: rgb(205,205,205);
+    padding: 25px 0px ;
+    font-size: large;
+    text-align: left;
+}
+
+.caixa3 {
+    text-align: center;
+    border-style: solid;
+    border-color: #000000;
+    padding: 150px;
+    background-color: #262626;
+}
+
+.caixa3-conteudo {
+    padding: 20px;
+}
+
+/********************************************Conteudo ua**************************************/
+
+.modal-ua {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 99;
+}
+
+.modal-ua__hide {
+    display: none;
+}
+
+.ua {
+    padding: 20px;
+    display: flex;
+    justify-items: center;
+    justify-content: space-around;
+    background-image: url(../images/imgfundo7.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.aside-ua {
+    margin: 60px auto;
+    border: 2px solid black;
+    width: 25%;
+    background-color: black;
+    text-align: center;
+}
+.conteudo-ua-text {
+    background-color: #000000;
+    color: rgb(205,205,205);
+    box-sizing: border-box;
+    text-align: left;
+    padding: 10px;
+}
+
+.aside-ua button {
+    background-color: black;
+    border: 1px solid black;
+    color: #cdcdcd;
+}
+
+.aside-ua button:hover {
+    background-color: #cdcdcd;
+    color: black;
+}
+
+.aside-ua__content {
+    width: 100%;
+    height: 40%;
+    transition: all 1s ease-in-out;
+    z-index: 99;
+}
+
+.aside-ua__content__scaled {
+    position: relative;
+    top: 0;
+    left: 0;
+    scale: 200%;
+    transform: translateX(75%);
+    z-index: 99;
+}
+
+.conteudo-ua {
+    margin: 60px auto;
+    width: 60%;
+    box-sizing: border-box;
+}
+
+/*******************************************Obesidade***************************************/
+
+.obesidade {
+    display: block;
+    background-color:#262626;
+    padding: 20px;
+}
+
+.consequencias {
+    padding: 40px;
+    text-align: center;
+    background-color: #262626;
+    color: #cdcdcd;
+    border: #000000;
+}
+
+.consequencias_card {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 40px;
+}
+
+.card-body {
+    background-color:black;
+    border: #000000;
+}
+
+.card-text {
+    color: rgb(205,205,205);
+}
+
+.consequencias_card button {
+    background-color: #262626;
+    border-color: #cdcdcd;
+}
+
+.consequencias_card img {
+    border-color: #000000;
+}
+
+.caixa1-obesidade h3 {
+    display: inline;
+    padding: 10px 20px ;
+    color: #fff;
+    background-color: #111;
+}
+
+.imgfundo4 {
+    position: relative;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+    background-image: url(../images/imgfundo4.jpg);
+}
+
+/*^*********************WEBGRAFIA******************************************/
+li{
+    margin: 15px 0;
+  }
+
+.conteudo-webgrafia a:hover{
+    color: black;
+}
+
+.conteudo-webgrafia {
+    padding: 20px;
+    text-align: left;
+    padding: 50px;
+    border-style: solid;
+    border-color: #000000;
+    background-color: #262626;
+    color: #cdcdcd;
+    text-decoration: none;
+}
+
+.webgrafia {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-image: url(../images/imgfundo8.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    padding: 80px 36.5%;
+}
+
+.caixa1-conteudo__webgrafia h3 {
+    display: inline;
+    padding: 10px 20px;
+    color: #cdcdcd;
+    background-color: #000000;
+}
+
+.conteudo-webgrafia ol li a{
+    width: 100%;
+    text-decoration: none;
+    color: #cdcdcd;
+}
+
+/************************************Conteudo-Sobre**********************************************/
+
+.conteudo-sobre {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.info {
+    background-color: #262626;
+    color: #cdcdcd;
+    width: 30%;
+    margin: 7%;
+    padding: 40px;
+    border: 2px solid black;
+}
+
+/***************************************Footer**********************************************************/
+
+.rodape {
+    padding: 20px;
+    text-align: center;
+    font-size: small;
+    color: #cdcdcd;
+    background-color: #000000;
+}
+
+.git p {
+    margin: 15px;
+    text-align: center;
+    color: #cdcdcd;
+}
+
+.git button{
+    margin: 10px;
+    border-style: solid;
+    border-color: #cdcdcd;
+    padding: 5px;
+    background-color: #262626;
+}
+
+.git button a {
+    text-decoration: none;
+    color: #cdcdcd;
+}
+
+/**************************************Media Query******************************************************/
+
+@media(max-width: 1050px) {
+
+    .nav-header {
+        position: fixed;
+        top: 0px;
+        display: block;
+        width: 100%;
+        z-index: 99;
+        height: 100vh;
+        background-color: rgba( 0, 0, 0, 0.4);
+        transform: translateY(-1200px);
+        transition: all 0.5s ease-in;
+        margin: 0px;
+    }
+
+    .nav-header ul li:not(:last-child) {
+        border-right: none;
+        border-bottom: 1px dotted black;
+    }
+
+    .nav-header nav {
+        background: #b5b9bc;
+        display: block;
+        padding-top: 20px;
+    }
+
+    .nav-header__show {
+        transform: translateY(0px);
+    }
+
+    .btn-menu {
+        display: flex;
+    }
+
+    .nav-header ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-header ul li {
+        height: 60px;
+        display: block;
+        text-decoration: none;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .btn-close-menu {
+        display: block;
+    }
+
+
+    .ua {
+        flex-direction: column;
+        
+    }
+
+    .aside-ua {
+        margin: 30px auto;
+        align-self: center;
+    }
+
+    .aside-ua button {
+        display: none;
+    }
+
+    .conteudo-ua {
+        margin: 0 auto 30px;
+        width: 90%;
+    }
+
+    .caixa1-obesidade h3 {
+        font-size: 15px;
+    }
+
+
+    .conteudo-sobre {
+        flex-direction: column;
+    }
+
+
+}
