@@ -1,0 +1,62 @@
+library ieee;
+use std_logic_1164.all;
+use ieee.numeric_std.all;
+
+
+entity CounterDemo is
+	port(CLOCK_50 : in std_logic;
+			SW : in std_logic_vector(1 downto 0);
+			LEDR : out std_logic_vector(3 downto 0);
+			HEX0 : out std_logic_vector(6 downto 0);
+			HEX1 :out std_logic_vector(6 downto 0)
+	);
+end CounterDemo;
+
+architecture Shell of CounterDemo is
+	signal s_reset : std_logic;
+	signal s_sel : std_logic;
+	signal s_enable : std_logic;
+	signal s_count : std_logic_vector(3 downto 0);
+	
+	s_sel <= SW(1),
+	s_reset <= SW(0)
+	
+begin
+	
+	pulsGen : entity work.ClkDiviser(Behavioral) is
+	port map
+	(
+		clkin => CloCK_50,
+		clkOut => s_enable
+	);
+	
+	
+	counter : entity work.Counter(Behavioral) is
+	port map
+	(
+		clk => CLOCK_50,
+		enable => s_enable,
+		reset => s_reset,
+		count => s_count(3 downto 0) 
+	);
+	
+	freqDiv : entity work.FreqDiv(Behavioral) is
+	port map
+	(
+		clkin => CLOCK_50;
+		clkOut and s_count(0) => LEDR(0),
+		clkOut and s_count(1) => LEDR(1),
+		clkOut and s_count(2) => LEDR(2),
+		clkOut and s_count(3) => LEDR(3)
+	);
+	
+	bin7Seg : entiity work.Bin7SegDecoder(Behavioral) is
+	port map
+	(
+	binInput => s_count(3 downto 0),
+	sel => s_sel,
+	decOut_0 => HEX0(6 downto 0),
+	decOut_1 => HEX1(6 downto 0)
+	);
+end Shell;
+	

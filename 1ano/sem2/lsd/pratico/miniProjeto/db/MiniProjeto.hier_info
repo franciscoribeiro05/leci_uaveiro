@@ -1,0 +1,161 @@
+|CounterDemo
+CLOCK_50 => clkdiviser:pulsGen.clkin
+CLOCK_50 => counter:counter.clk
+CLOCK_50 => freqdiv:freqDiv.clkin
+SW[0] => counter:counter.reset
+SW[1] => bin7segdecoder:bin7Seg.sel
+LEDR[0] << LEDR.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[1] << LEDR.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[2] << LEDR.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[3] << LEDR.DB_MAX_OUTPUT_PORT_TYPE
+HEX0[0] << bin7segdecoder:bin7Seg.decOut_0[0]
+HEX0[1] << bin7segdecoder:bin7Seg.decOut_0[1]
+HEX0[2] << bin7segdecoder:bin7Seg.decOut_0[2]
+HEX0[3] << bin7segdecoder:bin7Seg.decOut_0[3]
+HEX0[4] << bin7segdecoder:bin7Seg.decOut_0[4]
+HEX0[5] << bin7segdecoder:bin7Seg.decOut_0[5]
+HEX0[6] << bin7segdecoder:bin7Seg.decOut_0[6]
+HEX1[0] << bin7segdecoder:bin7Seg.decOut_1[0]
+HEX1[1] << bin7segdecoder:bin7Seg.decOut_1[1]
+HEX1[2] << bin7segdecoder:bin7Seg.decOut_1[2]
+HEX1[3] << bin7segdecoder:bin7Seg.decOut_1[3]
+HEX1[4] << bin7segdecoder:bin7Seg.decOut_1[4]
+HEX1[5] << bin7segdecoder:bin7Seg.decOut_1[5]
+HEX1[6] << bin7segdecoder:bin7Seg.decOut_1[6]
+
+
+|CounterDemo|ClkDiviser:pulsGen
+clkin => clkOut~reg0.CLK
+clkin => counter[0].CLK
+clkin => counter[1].CLK
+clkin => counter[2].CLK
+clkin => counter[3].CLK
+clkin => counter[4].CLK
+clkin => counter[5].CLK
+clkin => counter[6].CLK
+clkin => counter[7].CLK
+clkin => counter[8].CLK
+clkin => counter[9].CLK
+clkin => counter[10].CLK
+clkin => counter[11].CLK
+clkin => counter[12].CLK
+clkin => counter[13].CLK
+clkin => counter[14].CLK
+clkin => counter[15].CLK
+clkin => counter[16].CLK
+clkin => counter[17].CLK
+clkin => counter[18].CLK
+clkin => counter[19].CLK
+clkin => counter[20].CLK
+clkin => counter[21].CLK
+clkin => counter[22].CLK
+clkin => counter[23].CLK
+clkin => counter[24].CLK
+clkin => counter[25].CLK
+clkOut <= clkOut~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CounterDemo|Counter:counter
+clk => s_count[0].CLK
+clk => s_count[1].CLK
+clk => s_count[2].CLK
+clk => s_count[3].CLK
+enable => s_count[0].ENA
+enable => s_count[1].ENA
+enable => s_count[2].ENA
+enable => s_count[3].ENA
+reset => s_count.OUTPUTSELECT
+reset => s_count.OUTPUTSELECT
+reset => s_count.OUTPUTSELECT
+reset => s_count.OUTPUTSELECT
+count[0] <= s_count[0].DB_MAX_OUTPUT_PORT_TYPE
+count[1] <= s_count[1].DB_MAX_OUTPUT_PORT_TYPE
+count[2] <= s_count[2].DB_MAX_OUTPUT_PORT_TYPE
+count[3] <= s_count[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CounterDemo|FreqDiv:freqDiv
+clkin => clockOutSignal.CLK
+clkin => counter[0].CLK
+clkin => counter[1].CLK
+clkin => counter[2].CLK
+clkin => counter[3].CLK
+clkin => counter[4].CLK
+clkin => counter[5].CLK
+clkin => counter[6].CLK
+clkin => counter[7].CLK
+clkin => counter[8].CLK
+clkin => counter[9].CLK
+clkin => counter[10].CLK
+clkin => counter[11].CLK
+clkin => counter[12].CLK
+clkin => counter[13].CLK
+clkin => counter[14].CLK
+clkin => counter[15].CLK
+clkin => counter[16].CLK
+clkin => counter[17].CLK
+clkin => counter[18].CLK
+clkin => counter[19].CLK
+clkin => counter[20].CLK
+clkin => counter[21].CLK
+clkin => counter[22].CLK
+clkOut <= clockOutSignal.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CounterDemo|Bin7SegDecoder:bin7Seg
+sel => decOut_0.OUTPUTSELECT
+sel => decOut_0.OUTPUTSELECT
+sel => decOut_0.OUTPUTSELECT
+sel => decOut_0.OUTPUTSELECT
+sel => decOut_0.OUTPUTSELECT
+sel => decOut_0.OUTPUTSELECT
+sel => decOut_0.OUTPUTSELECT
+sel => decOut_1.OUTPUTSELECT
+sel => decOut_1.OUTPUTSELECT
+binInput[0] => Mux0.IN19
+binInput[0] => Mux1.IN19
+binInput[0] => Mux2.IN19
+binInput[0] => Mux3.IN19
+binInput[0] => Mux4.IN19
+binInput[0] => Mux5.IN19
+binInput[0] => Mux6.IN19
+binInput[1] => Mux0.IN18
+binInput[1] => Mux1.IN18
+binInput[1] => Mux2.IN18
+binInput[1] => Mux3.IN18
+binInput[1] => Mux4.IN18
+binInput[1] => Mux5.IN18
+binInput[1] => Mux6.IN18
+binInput[1] => Mux7.IN10
+binInput[2] => Mux0.IN17
+binInput[2] => Mux1.IN17
+binInput[2] => Mux2.IN17
+binInput[2] => Mux3.IN17
+binInput[2] => Mux4.IN17
+binInput[2] => Mux5.IN17
+binInput[2] => Mux6.IN17
+binInput[2] => Mux7.IN9
+binInput[3] => Mux0.IN16
+binInput[3] => Mux1.IN16
+binInput[3] => Mux2.IN16
+binInput[3] => Mux3.IN16
+binInput[3] => Mux4.IN16
+binInput[3] => Mux5.IN16
+binInput[3] => Mux6.IN16
+binInput[3] => Mux7.IN8
+decOut_0[0] <= decOut_0.DB_MAX_OUTPUT_PORT_TYPE
+decOut_0[1] <= decOut_0.DB_MAX_OUTPUT_PORT_TYPE
+decOut_0[2] <= decOut_0.DB_MAX_OUTPUT_PORT_TYPE
+decOut_0[3] <= decOut_0.DB_MAX_OUTPUT_PORT_TYPE
+decOut_0[4] <= decOut_0.DB_MAX_OUTPUT_PORT_TYPE
+decOut_0[5] <= decOut_0.DB_MAX_OUTPUT_PORT_TYPE
+decOut_0[6] <= decOut_0.DB_MAX_OUTPUT_PORT_TYPE
+decOut_1[0] <= <VCC>
+decOut_1[1] <= decOut_1.DB_MAX_OUTPUT_PORT_TYPE
+decOut_1[2] <= decOut_1.DB_MAX_OUTPUT_PORT_TYPE
+decOut_1[3] <= <VCC>
+decOut_1[4] <= <VCC>
+decOut_1[5] <= <VCC>
+decOut_1[6] <= <VCC>
+
+
