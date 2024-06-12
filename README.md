@@ -1,33 +1,19 @@
 # leci_uaveiro
 
-Repositório para armazenar materiais e notas das unidades curriculares do curso.
+Licenciatura em Engenharia de Computadores e Informática
 
 ## Índice
 
 ### 1º Ano
 
 #### 1º Semestre
-- [Cadeira 1](1ano/sem1/fp)
-- [Cadeira 2](1ano/sem1/isd)
+- [Fundamentos de Programação](1ano/sem1/fp)
+- [Introdução aos Sistemas Digitais](1ano/sem1/isd)
+- [Introdução à Engenharia Informática](1ano/sem1/iei)
+- [Cálculo I - C](1ano/sem1/c1)
+- [Álgebra Linear e Geometria Analítica A](1ano/sem1/algaa)
 
 #### 2º Semestre
-- [Cadeira 1](1ano/sem2/lsd)
-- [Cadeira 2](1ano/sem2/calculo2)
+- [Laboratórios de Sistemas Digitais](1ano/sem2/lsd)
+- [Cálculo II](1ano/sem2/calculo2)
 
-## Detalhes dos Diretórios
-
-### 1º Ano
-
-#### 1º Semestre
-##### [Cadeira1](1ano/sem1/cadeira1)
-Aqui você pode descrever o conteúdo ou objetivo da Cadeira 1.
-
-##### [Cadeira 2](1ano/sem1/cadeira2)
-Aqui você pode descrever o conteúdo ou objetivo da Cadeira 2.
-
-#### 2º Semestre
-##### [Cadeira 1](1ano/sem2/cadeira1)
-Aqui você pode descrever o conteúdo ou objetivo da Cadeira 1.
-
-##### [Cadeira 2](1ano/sem2/cadeira2)
-Aqui você pode descrever o conteúdo ou objetivo da Cadeira 2.
