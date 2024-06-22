@@ -1,0 +1,1024 @@
+Analysis & Synthesis report for ProgramControler_Demo
+Sat Jun  1 23:51:39 2024
+Quartus Prime Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |ProgramControler_Demo|ProgramController:inst|selected_program
+  9. State Machine - |ProgramControler_Demo|ProgramController:inst|current_state
+ 10. State Machine - |ProgramControler_Demo|StateMachine:inst22|current_state
+ 11. User-Specified and Inferred Latches
+ 12. Registers Removed During Synthesis
+ 13. Removed Registers Triggering Further Register Optimizations
+ 14. General Register Statistics
+ 15. Inverted Register Statistics
+ 16. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 17. Parameter Settings for User Entity Instance: PulseGenerator:inst14
+ 18. Parameter Settings for Inferred Entity Instance: BinToBCD:inst5|lpm_divide:Mod1
+ 19. Parameter Settings for Inferred Entity Instance: BinToBCD:inst5|lpm_divide:Mod0
+ 20. Parameter Settings for Inferred Entity Instance: BinToBCD:inst5|lpm_divide:Div1
+ 21. Parameter Settings for Inferred Entity Instance: BinToBCD:inst5|lpm_divide:Div0
+ 22. Parameter Settings for Inferred Entity Instance: BinToBCD:inst13|lpm_divide:Mod1
+ 23. Parameter Settings for Inferred Entity Instance: BinToBCD:inst13|lpm_divide:Mod0
+ 24. Parameter Settings for Inferred Entity Instance: BinToBCD:inst13|lpm_divide:Div1
+ 25. Parameter Settings for Inferred Entity Instance: ProgramController:inst|lpm_divide:Div0
+ 26. Post-Synthesis Netlist Statistics for Top Partition
+ 27. Elapsed Time Per Partition
+ 28. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2023  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                        ;
++------------------------------------+------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sat Jun  1 23:51:39 2024          ;
+; Quartus Prime Version              ; 22.1std.1 Build 917 02/14/2023 SC Lite Edition ;
+; Revision Name                      ; ProgramControler_Demo                          ;
+; Top-level Entity Name              ; ProgramControler_Demo                          ;
+; Family                             ; Cyclone IV E                                   ;
+; Total logic elements               ; 1,114                                          ;
+;     Total combinational functions  ; 1,111                                          ;
+;     Dedicated logic registers      ; 273                                            ;
+; Total registers                    ; 273                                            ;
+; Total pins                         ; 83                                             ;
+; Total virtual pins                 ; 0                                              ;
+; Total memory bits                  ; 0                                              ;
+; Embedded Multiplier 9-bit elements ; 0                                              ;
+; Total PLLs                         ; 0                                              ;
++------------------------------------+------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                    ;
++------------------------------------------------------------------+-----------------------+-----------------------+
+; Option                                                           ; Setting               ; Default Value         ;
++------------------------------------------------------------------+-----------------------+-----------------------+
+; Device                                                           ; EP4CE115F29C7         ;                       ;
+; Top-level entity name                                            ; ProgramControler_Demo ; ProgramControler_Demo ;
+; Family name                                                      ; Cyclone IV E          ; Cyclone V             ;
+; Use smart compilation                                            ; Off                   ; Off                   ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                    ; On                    ;
+; Enable compact report table                                      ; Off                   ; Off                   ;
+; Restructure Multiplexers                                         ; Auto                  ; Auto                  ;
+; Create Debugging Nodes for IP Cores                              ; Off                   ; Off                   ;
+; Preserve fewer node names                                        ; On                    ; On                    ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable                ; Enable                ;
+; Verilog Version                                                  ; Verilog_2001          ; Verilog_2001          ;
+; VHDL Version                                                     ; VHDL_1993             ; VHDL_1993             ;
+; State Machine Processing                                         ; Auto                  ; Auto                  ;
+; Safe State Machine                                               ; Off                   ; Off                   ;
+; Extract Verilog State Machines                                   ; On                    ; On                    ;
+; Extract VHDL State Machines                                      ; On                    ; On                    ;
+; Ignore Verilog initial constructs                                ; Off                   ; Off                   ;
+; Iteration limit for constant Verilog loops                       ; 5000                  ; 5000                  ;
+; Iteration limit for non-constant Verilog loops                   ; 250                   ; 250                   ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                    ; On                    ;
+; Infer RAMs from Raw Logic                                        ; On                    ; On                    ;
+; Parallel Synthesis                                               ; On                    ; On                    ;
+; DSP Block Balancing                                              ; Auto                  ; Auto                  ;
+; NOT Gate Push-Back                                               ; On                    ; On                    ;
+; Power-Up Don't Care                                              ; On                    ; On                    ;
+; Remove Redundant Logic Cells                                     ; Off                   ; Off                   ;
+; Remove Duplicate Registers                                       ; On                    ; On                    ;
+; Ignore CARRY Buffers                                             ; Off                   ; Off                   ;
+; Ignore CASCADE Buffers                                           ; Off                   ; Off                   ;
+; Ignore GLOBAL Buffers                                            ; Off                   ; Off                   ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                   ; Off                   ;
+; Ignore LCELL Buffers                                             ; Off                   ; Off                   ;
+; Ignore SOFT Buffers                                              ; On                    ; On                    ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                   ; Off                   ;
+; Optimization Technique                                           ; Balanced              ; Balanced              ;
+; Carry Chain Length                                               ; 70                    ; 70                    ;
+; Auto Carry Chains                                                ; On                    ; On                    ;
+; Auto Open-Drain Pins                                             ; On                    ; On                    ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                   ; Off                   ;
+; Auto ROM Replacement                                             ; On                    ; On                    ;
+; Auto RAM Replacement                                             ; On                    ; On                    ;
+; Auto DSP Block Replacement                                       ; On                    ; On                    ;
+; Auto Shift Register Replacement                                  ; Auto                  ; Auto                  ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto                  ; Auto                  ;
+; Auto Clock Enable Replacement                                    ; On                    ; On                    ;
+; Strict RAM Replacement                                           ; Off                   ; Off                   ;
+; Allow Synchronous Control Signals                                ; On                    ; On                    ;
+; Force Use of Synchronous Clear Signals                           ; Off                   ; Off                   ;
+; Auto RAM Block Balancing                                         ; On                    ; On                    ;
+; Auto RAM to Logic Cell Conversion                                ; Off                   ; Off                   ;
+; Auto Resource Sharing                                            ; Off                   ; Off                   ;
+; Allow Any RAM Size For Recognition                               ; Off                   ; Off                   ;
+; Allow Any ROM Size For Recognition                               ; Off                   ; Off                   ;
+; Allow Any Shift Register Size For Recognition                    ; Off                   ; Off                   ;
+; Use LogicLock Constraints during Resource Balancing              ; On                    ; On                    ;
+; Ignore translate_off and synthesis_off directives                ; Off                   ; Off                   ;
+; Timing-Driven Synthesis                                          ; On                    ; On                    ;
+; Report Parameter Settings                                        ; On                    ; On                    ;
+; Report Source Assignments                                        ; On                    ; On                    ;
+; Report Connectivity Checks                                       ; On                    ; On                    ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                   ; Off                   ;
+; Synchronization Register Chain Length                            ; 2                     ; 2                     ;
+; Power Optimization During Synthesis                              ; Normal compilation    ; Normal compilation    ;
+; HDL message level                                                ; Level2                ; Level2                ;
+; Suppress Register Optimization Related Messages                  ; Off                   ; Off                   ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000                  ; 5000                  ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000                  ; 5000                  ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                   ; 100                   ;
+; Clock MUX Protection                                             ; On                    ; On                    ;
+; Auto Gated Clock Conversion                                      ; Off                   ; Off                   ;
+; Block Design Naming                                              ; Auto                  ; Auto                  ;
+; SDC constraint protection                                        ; Off                   ; Off                   ;
+; Synthesis Effort                                                 ; Auto                  ; Auto                  ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                    ; On                    ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                   ; Off                   ;
+; Analysis & Synthesis Message Level                               ; Medium                ; Medium                ;
+; Disable Register Merging Across Hierarchies                      ; Auto                  ; Auto                  ;
+; Resource Aware Inference For Block RAM                           ; On                    ; On                    ;
++------------------------------------------------------------------+-----------------------+-----------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 16          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 16          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-16        ;   0.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                 ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                                                       ; Library ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------------------------------------------------+---------+
+; ProgramController.vhd            ; yes             ; User VHDL File                     ; /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/ProgramController.vhd      ;         ;
+; ProgramControler_Demo.bdf        ; yes             ; User Block Diagram/Schematic File  ; /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/ProgramControler_Demo.bdf  ;         ;
+; DeBounce.vhd                     ; yes             ; User VHDL File                     ; /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/DeBounce.vhd               ;         ;
+; BUTTON.vhd                       ; yes             ; User VHDL File                     ; /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/BUTTON.vhd                 ;         ;
+; BUTTON2.vhd                      ; yes             ; User VHDL File                     ; /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/BUTTON2.vhd                ;         ;
+; ModeSelector.vhd                 ; yes             ; User VHDL File                     ; /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/ModeSelector.vhd           ;         ;
+; HeatCool.vhd                     ; yes             ; User VHDL File                     ; /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/HeatCool.vhd               ;         ;
+; Temperature_Control.vhd          ; yes             ; User VHDL File                     ; /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/Temperature_Control.vhd    ;         ;
+; BinToBCD.vhd                     ; yes             ; User VHDL File                     ; /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/BinToBCD.vhd               ;         ;
+; Bin7SegDecoder.vhd               ; yes             ; User VHDL File                     ; /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/Bin7SegDecoder.vhd         ;         ;
+; Bin7SegDecoder2.vhd              ; yes             ; User VHDL File                     ; /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/Bin7SegDecoder2.vhd        ;         ;
+; Timer.vhd                        ; yes             ; User VHDL File                     ; /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/Timer.vhd                  ;         ;
+; PulseGenerator.vhd               ; yes             ; User VHDL File                     ; /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/PulseGenerator.vhd         ;         ;
+; StateMachine.vhd                 ; yes             ; User VHDL File                     ; /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/StateMachine.vhd           ;         ;
+; PulseGenerator2.vhd              ; yes             ; User VHDL File                     ; /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/PulseGenerator2.vhd        ;         ;
+; SelectInput.vhd                  ; yes             ; User VHDL File                     ; /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/SelectInput.vhd            ;         ;
+; LEDBlinker.vhd                   ; yes             ; User VHDL File                     ; /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/LEDBlinker.vhd             ;         ;
+; EnableControl.vhd                ; yes             ; User VHDL File                     ; /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/EnableControl.vhd          ;         ;
+; SeletorDeEntradas.vhd            ; yes             ; User VHDL File                     ; /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/SeletorDeEntradas.vhd      ;         ;
+; RangeComparator1.vhd             ; yes             ; User VHDL File                     ; /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/RangeComparator1.vhd       ;         ;
+; RangeComparator2.vhd             ; yes             ; User VHDL File                     ; /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/RangeComparator2.vhd       ;         ;
+; BitToVector.vhd                  ; yes             ; User VHDL File                     ; /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/BitToVector.vhd            ;         ;
+; BitToVector2.vhd                 ; yes             ; User VHDL File                     ; /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/BitToVector2.vhd           ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                       ; /home/francisco/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/lpm_divide.tdf                              ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                       ; /home/francisco/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/abs_divider.inc                             ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                       ; /home/francisco/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/sign_div_unsign.inc                         ;         ;
+; aglobal221.inc                   ; yes             ; Megafunction                       ; /home/francisco/intelFPGA_lite/22.1std/quartus/libraries/megafunctions/aglobal221.inc                              ;         ;
+; db/lpm_divide_q9m.tdf            ; yes             ; Auto-Generated Megafunction        ; /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/db/lpm_divide_q9m.tdf      ;         ;
+; db/sign_div_unsign_fkh.tdf       ; yes             ; Auto-Generated Megafunction        ; /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/db/sign_div_unsign_fkh.tdf ;         ;
+; db/alt_u_div_i4f.tdf             ; yes             ; Auto-Generated Megafunction        ; /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/db/alt_u_div_i4f.tdf       ;         ;
+; db/add_sub_7pc.tdf               ; yes             ; Auto-Generated Megafunction        ; /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/db/add_sub_7pc.tdf         ;         ;
+; db/add_sub_8pc.tdf               ; yes             ; Auto-Generated Megafunction        ; /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/db/add_sub_8pc.tdf         ;         ;
+; db/lpm_divide_jhm.tdf            ; yes             ; Auto-Generated Megafunction        ; /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/db/lpm_divide_jhm.tdf      ;         ;
+; db/sign_div_unsign_bkh.tdf       ; yes             ; Auto-Generated Megafunction        ; /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/db/sign_div_unsign_bkh.tdf ;         ;
+; db/alt_u_div_a4f.tdf             ; yes             ; Auto-Generated Megafunction        ; /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/db/alt_u_div_a4f.tdf       ;         ;
+; db/lpm_divide_mhm.tdf            ; yes             ; Auto-Generated Megafunction        ; /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/db/lpm_divide_mhm.tdf      ;         ;
+; db/sign_div_unsign_ekh.tdf       ; yes             ; Auto-Generated Megafunction        ; /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/db/sign_div_unsign_ekh.tdf ;         ;
+; db/alt_u_div_g4f.tdf             ; yes             ; Auto-Generated Megafunction        ; /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/db/alt_u_div_g4f.tdf       ;         ;
+; db/lpm_divide_l0p.tdf            ; yes             ; Auto-Generated Megafunction        ; /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/db/lpm_divide_l0p.tdf      ;         ;
+; db/abs_divider_gbg.tdf           ; yes             ; Auto-Generated Megafunction        ; /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/db/abs_divider_gbg.tdf     ;         ;
+; db/alt_u_div_u6f.tdf             ; yes             ; Auto-Generated Megafunction        ; /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/db/alt_u_div_u6f.tdf       ;         ;
+; db/lpm_abs_2v9.tdf               ; yes             ; Auto-Generated Megafunction        ; /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/db/lpm_abs_2v9.tdf         ;         ;
+; db/lpm_abs_e0a.tdf               ; yes             ; Auto-Generated Megafunction        ; /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/db/lpm_abs_e0a.tdf         ;         ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimated Total logic elements              ; 1,114          ;
+;                                             ;                ;
+; Total combinational functions               ; 1111           ;
+; Logic element usage by number of LUT inputs ;                ;
+;     -- 4 input functions                    ; 291            ;
+;     -- 3 input functions                    ; 243            ;
+;     -- <=2 input functions                  ; 577            ;
+;                                             ;                ;
+; Logic elements by mode                      ;                ;
+;     -- normal mode                          ; 729            ;
+;     -- arithmetic mode                      ; 382            ;
+;                                             ;                ;
+; Total registers                             ; 273            ;
+;     -- Dedicated logic registers            ; 273            ;
+;     -- I/O registers                        ; 0              ;
+;                                             ;                ;
+; I/O pins                                    ; 83             ;
+;                                             ;                ;
+; Embedded Multiplier 9-bit elements          ; 0              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; CLOCK_50~input ;
+; Maximum fan-out                             ; 264            ;
+; Total fan-out                               ; 3906           ;
+; Average fan-out                             ; 2.52           ;
++---------------------------------------------+----------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                      ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+--------------+
+; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                        ; Entity Name           ; Library Name ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+--------------+
+; |ProgramControler_Demo                    ; 1111 (21)           ; 273 (0)                   ; 0           ; 0            ; 0       ; 0         ; 83   ; 0            ; |ProgramControler_Demo                                                                                                                     ; ProgramControler_Demo ; work         ;
+;    |BUTTON2:inst2|                        ; 15 (15)             ; 9 (9)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProgramControler_Demo|BUTTON2:inst2                                                                                                       ; BUTTON2               ; work         ;
+;    |BUTTON:inst3|                         ; 12 (12)             ; 10 (10)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProgramControler_Demo|BUTTON:inst3                                                                                                        ; BUTTON                ; work         ;
+;    |Bin7SegDecoder2:inst8|                ; 28 (28)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProgramControler_Demo|Bin7SegDecoder2:inst8                                                                                               ; Bin7SegDecoder2       ; work         ;
+;    |Bin7SegDecoder:inst6|                 ; 24 (24)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProgramControler_Demo|Bin7SegDecoder:inst6                                                                                                ; Bin7SegDecoder        ; work         ;
+;    |BinToBCD:inst13|                      ; 179 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProgramControler_Demo|BinToBCD:inst13                                                                                                     ; BinToBCD              ; work         ;
+;       |lpm_divide:Div1|                   ; 60 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProgramControler_Demo|BinToBCD:inst13|lpm_divide:Div1                                                                                     ; lpm_divide            ; work         ;
+;          |lpm_divide_jhm:auto_generated|  ; 60 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProgramControler_Demo|BinToBCD:inst13|lpm_divide:Div1|lpm_divide_jhm:auto_generated                                                       ; lpm_divide_jhm        ; work         ;
+;             |sign_div_unsign_bkh:divider| ; 60 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProgramControler_Demo|BinToBCD:inst13|lpm_divide:Div1|lpm_divide_jhm:auto_generated|sign_div_unsign_bkh:divider                           ; sign_div_unsign_bkh   ; work         ;
+;                |alt_u_div_a4f:divider|    ; 60 (60)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProgramControler_Demo|BinToBCD:inst13|lpm_divide:Div1|lpm_divide_jhm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_a4f:divider     ; alt_u_div_a4f         ; work         ;
+;       |lpm_divide:Mod0|                   ; 42 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProgramControler_Demo|BinToBCD:inst13|lpm_divide:Mod0                                                                                     ; lpm_divide            ; work         ;
+;          |lpm_divide_q9m:auto_generated|  ; 42 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProgramControler_Demo|BinToBCD:inst13|lpm_divide:Mod0|lpm_divide_q9m:auto_generated                                                       ; lpm_divide_q9m        ; work         ;
+;             |sign_div_unsign_fkh:divider| ; 42 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProgramControler_Demo|BinToBCD:inst13|lpm_divide:Mod0|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider                           ; sign_div_unsign_fkh   ; work         ;
+;                |alt_u_div_i4f:divider|    ; 42 (42)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProgramControler_Demo|BinToBCD:inst13|lpm_divide:Mod0|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider|alt_u_div_i4f:divider     ; alt_u_div_i4f         ; work         ;
+;       |lpm_divide:Mod1|                   ; 77 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProgramControler_Demo|BinToBCD:inst13|lpm_divide:Mod1                                                                                     ; lpm_divide            ; work         ;
+;          |lpm_divide_q9m:auto_generated|  ; 77 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProgramControler_Demo|BinToBCD:inst13|lpm_divide:Mod1|lpm_divide_q9m:auto_generated                                                       ; lpm_divide_q9m        ; work         ;
+;             |sign_div_unsign_fkh:divider| ; 77 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProgramControler_Demo|BinToBCD:inst13|lpm_divide:Mod1|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider                           ; sign_div_unsign_fkh   ; work         ;
+;                |alt_u_div_i4f:divider|    ; 77 (77)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProgramControler_Demo|BinToBCD:inst13|lpm_divide:Mod1|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider|alt_u_div_i4f:divider     ; alt_u_div_i4f         ; work         ;
+;    |BinToBCD:inst5|                       ; 204 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProgramControler_Demo|BinToBCD:inst5                                                                                                      ; BinToBCD              ; work         ;
+;       |lpm_divide:Div0|                   ; 25 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProgramControler_Demo|BinToBCD:inst5|lpm_divide:Div0                                                                                      ; lpm_divide            ; work         ;
+;          |lpm_divide_mhm:auto_generated|  ; 25 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProgramControler_Demo|BinToBCD:inst5|lpm_divide:Div0|lpm_divide_mhm:auto_generated                                                        ; lpm_divide_mhm        ; work         ;
+;             |sign_div_unsign_ekh:divider| ; 25 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProgramControler_Demo|BinToBCD:inst5|lpm_divide:Div0|lpm_divide_mhm:auto_generated|sign_div_unsign_ekh:divider                            ; sign_div_unsign_ekh   ; work         ;
+;                |alt_u_div_g4f:divider|    ; 25 (25)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProgramControler_Demo|BinToBCD:inst5|lpm_divide:Div0|lpm_divide_mhm:auto_generated|sign_div_unsign_ekh:divider|alt_u_div_g4f:divider      ; alt_u_div_g4f         ; work         ;
+;       |lpm_divide:Div1|                   ; 60 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProgramControler_Demo|BinToBCD:inst5|lpm_divide:Div1                                                                                      ; lpm_divide            ; work         ;
+;          |lpm_divide_jhm:auto_generated|  ; 60 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProgramControler_Demo|BinToBCD:inst5|lpm_divide:Div1|lpm_divide_jhm:auto_generated                                                        ; lpm_divide_jhm        ; work         ;
+;             |sign_div_unsign_bkh:divider| ; 60 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProgramControler_Demo|BinToBCD:inst5|lpm_divide:Div1|lpm_divide_jhm:auto_generated|sign_div_unsign_bkh:divider                            ; sign_div_unsign_bkh   ; work         ;
+;                |alt_u_div_a4f:divider|    ; 60 (60)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProgramControler_Demo|BinToBCD:inst5|lpm_divide:Div1|lpm_divide_jhm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_a4f:divider      ; alt_u_div_a4f         ; work         ;
+;       |lpm_divide:Mod0|                   ; 42 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProgramControler_Demo|BinToBCD:inst5|lpm_divide:Mod0                                                                                      ; lpm_divide            ; work         ;
+;          |lpm_divide_q9m:auto_generated|  ; 42 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProgramControler_Demo|BinToBCD:inst5|lpm_divide:Mod0|lpm_divide_q9m:auto_generated                                                        ; lpm_divide_q9m        ; work         ;
+;             |sign_div_unsign_fkh:divider| ; 42 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProgramControler_Demo|BinToBCD:inst5|lpm_divide:Mod0|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider                            ; sign_div_unsign_fkh   ; work         ;
+;                |alt_u_div_i4f:divider|    ; 42 (42)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProgramControler_Demo|BinToBCD:inst5|lpm_divide:Mod0|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider|alt_u_div_i4f:divider      ; alt_u_div_i4f         ; work         ;
+;       |lpm_divide:Mod1|                   ; 77 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProgramControler_Demo|BinToBCD:inst5|lpm_divide:Mod1                                                                                      ; lpm_divide            ; work         ;
+;          |lpm_divide_q9m:auto_generated|  ; 77 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProgramControler_Demo|BinToBCD:inst5|lpm_divide:Mod1|lpm_divide_q9m:auto_generated                                                        ; lpm_divide_q9m        ; work         ;
+;             |sign_div_unsign_fkh:divider| ; 77 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProgramControler_Demo|BinToBCD:inst5|lpm_divide:Mod1|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider                            ; sign_div_unsign_fkh   ; work         ;
+;                |alt_u_div_i4f:divider|    ; 77 (77)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProgramControler_Demo|BinToBCD:inst5|lpm_divide:Mod1|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider|alt_u_div_i4f:divider      ; alt_u_div_i4f         ; work         ;
+;    |DeBounce:inst10|                      ; 49 (49)             ; 34 (34)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProgramControler_Demo|DeBounce:inst10                                                                                                     ; DeBounce              ; work         ;
+;    |DeBounce:inst16|                      ; 49 (49)             ; 34 (34)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProgramControler_Demo|DeBounce:inst16                                                                                                     ; DeBounce              ; work         ;
+;    |DeBounce:inst17|                      ; 49 (49)             ; 34 (34)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProgramControler_Demo|DeBounce:inst17                                                                                                     ; DeBounce              ; work         ;
+;    |HeatCool:inst7|                       ; 0 (0)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProgramControler_Demo|HeatCool:inst7                                                                                                      ; HeatCool              ; work         ;
+;    |LEDBlinker:inst33|                    ; 46 (46)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProgramControler_Demo|LEDBlinker:inst33                                                                                                   ; LEDBlinker            ; work         ;
+;    |ModeSelector:inst21|                  ; 30 (30)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProgramControler_Demo|ModeSelector:inst21                                                                                                 ; ModeSelector          ; work         ;
+;    |ProgramController:inst|               ; 172 (73)            ; 21 (21)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProgramControler_Demo|ProgramController:inst                                                                                              ; ProgramController     ; work         ;
+;       |lpm_divide:Div0|                   ; 99 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProgramControler_Demo|ProgramController:inst|lpm_divide:Div0                                                                              ; lpm_divide            ; work         ;
+;          |lpm_divide_l0p:auto_generated|  ; 99 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProgramControler_Demo|ProgramController:inst|lpm_divide:Div0|lpm_divide_l0p:auto_generated                                                ; lpm_divide_l0p        ; work         ;
+;             |abs_divider_gbg:divider|     ; 99 (6)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProgramControler_Demo|ProgramController:inst|lpm_divide:Div0|lpm_divide_l0p:auto_generated|abs_divider_gbg:divider                        ; abs_divider_gbg       ; work         ;
+;                |alt_u_div_u6f:divider|    ; 84 (84)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProgramControler_Demo|ProgramController:inst|lpm_divide:Div0|lpm_divide_l0p:auto_generated|abs_divider_gbg:divider|alt_u_div_u6f:divider  ; alt_u_div_u6f         ; work         ;
+;                |lpm_abs_e0a:my_abs_num|   ; 9 (9)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProgramControler_Demo|ProgramController:inst|lpm_divide:Div0|lpm_divide_l0p:auto_generated|abs_divider_gbg:divider|lpm_abs_e0a:my_abs_num ; lpm_abs_e0a           ; work         ;
+;    |PulseGenerator2:inst28|               ; 45 (45)             ; 25 (25)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProgramControler_Demo|PulseGenerator2:inst28                                                                                              ; PulseGenerator2       ; work         ;
+;    |PulseGenerator:inst14|                ; 46 (46)             ; 25 (25)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProgramControler_Demo|PulseGenerator:inst14                                                                                               ; PulseGenerator        ; work         ;
+;    |RangeComparator1:inst18|              ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProgramControler_Demo|RangeComparator1:inst18                                                                                             ; RangeComparator1      ; work         ;
+;    |RangeComparator2:inst20|              ; 6 (6)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProgramControler_Demo|RangeComparator2:inst20                                                                                             ; RangeComparator2      ; work         ;
+;    |SelectInput:inst32|                   ; 12 (12)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProgramControler_Demo|SelectInput:inst32                                                                                                  ; SelectInput           ; work         ;
+;    |SeletorDeEntradas:inst12|             ; 13 (13)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProgramControler_Demo|SeletorDeEntradas:inst12                                                                                            ; SeletorDeEntradas     ; work         ;
+;    |StateMachine:inst22|                  ; 20 (20)             ; 11 (11)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProgramControler_Demo|StateMachine:inst22                                                                                                 ; StateMachine          ; work         ;
+;    |Temperature_Control:inst1|            ; 77 (77)             ; 33 (33)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProgramControler_Demo|Temperature_Control:inst1                                                                                           ; Temperature_Control   ; work         ;
+;    |Timer:inst11|                         ; 12 (12)             ; 9 (9)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProgramControler_Demo|Timer:inst11                                                                                                        ; Timer                 ; work         ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |ProgramControler_Demo|ProgramController:inst|selected_program                                                                                                              ;
++----------------------------+----------------------------+--------------------------+--------------------------+--------------------------+-----------------------+--------------------------+
+; Name                       ; selected_program.HAMBURGER ; selected_program.FILETES ; selected_program.BATATAS ; selected_program.RISSOIS ; selected_program.USER ; selected_program.DEFAULT ;
++----------------------------+----------------------------+--------------------------+--------------------------+--------------------------+-----------------------+--------------------------+
+; selected_program.DEFAULT   ; 0                          ; 0                        ; 0                        ; 0                        ; 0                     ; 0                        ;
+; selected_program.USER      ; 0                          ; 0                        ; 0                        ; 0                        ; 1                     ; 1                        ;
+; selected_program.RISSOIS   ; 0                          ; 0                        ; 0                        ; 1                        ; 0                     ; 1                        ;
+; selected_program.BATATAS   ; 0                          ; 0                        ; 1                        ; 0                        ; 0                     ; 1                        ;
+; selected_program.FILETES   ; 0                          ; 1                        ; 0                        ; 0                        ; 0                     ; 1                        ;
+; selected_program.HAMBURGER ; 1                          ; 0                        ; 0                        ; 0                        ; 0                     ; 1                        ;
++----------------------------+----------------------------+--------------------------+--------------------------+--------------------------+-----------------------+--------------------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |ProgramControler_Demo|ProgramController:inst|current_state                                                                                                          ;
++------------------------+----------------------+-----------------------+------------------------+--------------------+-----------------------+--------------------+-------------------+
+; Name                   ; current_state.FINISH ; current_state.WAITING ; current_state.COOLDOWN ; current_state.COOK ; current_state.PREHEAT ; current_state.IDLE ; current_state.OFF ;
++------------------------+----------------------+-----------------------+------------------------+--------------------+-----------------------+--------------------+-------------------+
+; current_state.OFF      ; 0                    ; 0                     ; 0                      ; 0                  ; 0                     ; 0                  ; 0                 ;
+; current_state.IDLE     ; 0                    ; 0                     ; 0                      ; 0                  ; 0                     ; 1                  ; 1                 ;
+; current_state.PREHEAT  ; 0                    ; 0                     ; 0                      ; 0                  ; 1                     ; 0                  ; 1                 ;
+; current_state.COOK     ; 0                    ; 0                     ; 0                      ; 1                  ; 0                     ; 0                  ; 1                 ;
+; current_state.COOLDOWN ; 0                    ; 0                     ; 1                      ; 0                  ; 0                     ; 0                  ; 1                 ;
+; current_state.WAITING  ; 0                    ; 1                     ; 0                      ; 0                  ; 0                     ; 0                  ; 1                 ;
+; current_state.FINISH   ; 1                    ; 0                     ; 0                      ; 0                  ; 0                     ; 0                  ; 1                 ;
++------------------------+----------------------+-----------------------+------------------------+--------------------+-----------------------+--------------------+-------------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |ProgramControler_Demo|StateMachine:inst22|current_state                                                                                                                                                                                                      ;
++---------------------------+----------------------+------------------------+---------------------------+---------------------------+--------------------------+--------------------------+--------------------+-----------------------+--------------------+-------------------+
+; Name                      ; current_state.FINISH ; current_state.COOLDOWN ; current_state.WAIT_C_COOK ; current_state.WAIT_O_COOK ; current_state.WAIT_C_PRE ; current_state.WAIT_O_PRE ; current_state.COOK ; current_state.PREHEAT ; current_state.IDLE ; current_state.OFF ;
++---------------------------+----------------------+------------------------+---------------------------+---------------------------+--------------------------+--------------------------+--------------------+-----------------------+--------------------+-------------------+
+; current_state.OFF         ; 0                    ; 0                      ; 0                         ; 0                         ; 0                        ; 0                        ; 0                  ; 0                     ; 0                  ; 0                 ;
+; current_state.IDLE        ; 0                    ; 0                      ; 0                         ; 0                         ; 0                        ; 0                        ; 0                  ; 0                     ; 1                  ; 1                 ;
+; current_state.PREHEAT     ; 0                    ; 0                      ; 0                         ; 0                         ; 0                        ; 0                        ; 0                  ; 1                     ; 0                  ; 1                 ;
+; current_state.COOK        ; 0                    ; 0                      ; 0                         ; 0                         ; 0                        ; 0                        ; 1                  ; 0                     ; 0                  ; 1                 ;
+; current_state.WAIT_O_PRE  ; 0                    ; 0                      ; 0                         ; 0                         ; 0                        ; 1                        ; 0                  ; 0                     ; 0                  ; 1                 ;
+; current_state.WAIT_C_PRE  ; 0                    ; 0                      ; 0                         ; 0                         ; 1                        ; 0                        ; 0                  ; 0                     ; 0                  ; 1                 ;
+; current_state.WAIT_O_COOK ; 0                    ; 0                      ; 0                         ; 1                         ; 0                        ; 0                        ; 0                  ; 0                     ; 0                  ; 1                 ;
+; current_state.WAIT_C_COOK ; 0                    ; 0                      ; 1                         ; 0                         ; 0                        ; 0                        ; 0                  ; 0                     ; 0                  ; 1                 ;
+; current_state.COOLDOWN    ; 0                    ; 1                      ; 0                         ; 0                         ; 0                        ; 0                        ; 0                  ; 0                     ; 0                  ; 1                 ;
+; current_state.FINISH      ; 1                    ; 0                      ; 0                         ; 0                         ; 0                        ; 0                        ; 0                  ; 0                     ; 0                  ; 1                 ;
++---------------------------+----------------------+------------------------+---------------------------+---------------------------+--------------------------+--------------------------+--------------------+-----------------------+--------------------+-------------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                ;
++-----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------+------------------------+
+; ModeSelector:inst21|time_out_pre[0]                 ; SW[6]               ; yes                    ;
+; ModeSelector:inst21|time_out_cook[0]                ; SW[6]               ; yes                    ;
+; ModeSelector:inst21|time_out_pre[1]                 ; SW[6]               ; yes                    ;
+; ModeSelector:inst21|time_out_cook[1]                ; SW[6]               ; yes                    ;
+; ModeSelector:inst21|time_out_pre[2]                 ; SW[6]               ; yes                    ;
+; ModeSelector:inst21|time_out_cook[2]                ; SW[6]               ; yes                    ;
+; ModeSelector:inst21|time_out_pre[3]                 ; SW[6]               ; yes                    ;
+; ModeSelector:inst21|time_out_cook[3]                ; SW[6]               ; yes                    ;
+; ModeSelector:inst21|time_out_pre[4]                 ; SW[6]               ; yes                    ;
+; ModeSelector:inst21|time_out_cook[4]                ; SW[6]               ; yes                    ;
+; ModeSelector:inst21|time_out_pre[5]                 ; SW[6]               ; yes                    ;
+; ModeSelector:inst21|time_out_cook[5]                ; SW[6]               ; yes                    ;
+; ModeSelector:inst21|time_out_pre[6]                 ; SW[6]               ; yes                    ;
+; ModeSelector:inst21|time_out_cook[6]                ; SW[6]               ; yes                    ;
+; ModeSelector:inst21|time_out_pre[7]                 ; SW[6]               ; yes                    ;
+; ModeSelector:inst21|time_out_cook[7]                ; SW[6]               ; yes                    ;
+; ModeSelector:inst21|temp_out_pre[2]                 ; SW[6]               ; yes                    ;
+; ModeSelector:inst21|temp_out_cook[2]                ; SW[6]               ; yes                    ;
+; ModeSelector:inst21|temp_out_pre[1]                 ; SW[6]               ; yes                    ;
+; ModeSelector:inst21|temp_out_cook[1]                ; SW[6]               ; yes                    ;
+; ModeSelector:inst21|temp_out_pre[3]                 ; SW[6]               ; yes                    ;
+; ModeSelector:inst21|temp_out_cook[3]                ; SW[6]               ; yes                    ;
+; ModeSelector:inst21|temp_out_pre[4]                 ; SW[6]               ; yes                    ;
+; ModeSelector:inst21|temp_out_cook[4]                ; SW[6]               ; yes                    ;
+; ModeSelector:inst21|temp_out_pre[5]                 ; SW[6]               ; yes                    ;
+; ModeSelector:inst21|temp_out_cook[5]                ; SW[6]               ; yes                    ;
+; ModeSelector:inst21|temp_out_pre[6]                 ; SW[6]               ; yes                    ;
+; ModeSelector:inst21|temp_out_cook[6]                ; SW[6]               ; yes                    ;
+; ModeSelector:inst21|temp_out_pre[7]                 ; SW[6]               ; yes                    ;
+; ModeSelector:inst21|temp_out_cook[7]                ; SW[6]               ; yes                    ;
+; Number of user-specified and inferred latches = 30  ;                     ;                        ;
++-----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                       ;
++-----------------------------------------------+------------------------------------------+
+; Register name                                 ; Reason for Removal                       ;
++-----------------------------------------------+------------------------------------------+
+; ProgramController:inst|desired_temp[0]        ; Stuck at GND due to stuck port data_in   ;
+; Temperature_Control:inst1|s_temp[0]           ; Stuck at GND due to stuck port data_in   ;
+; ProgramController:inst|current_state.OFF      ; Lost fanout                              ;
+; ProgramController:inst|current_state.IDLE     ; Lost fanout                              ;
+; ProgramController:inst|current_state.FINISH   ; Lost fanout                              ;
+; ProgramController:inst|current_state.COOLDOWN ; Merged with HeatCool:inst7|s_cool        ;
+; ProgramController:inst|current_state.PREHEAT  ; Merged with HeatCool:inst7|s_heat        ;
+; PulseGenerator:inst14|s_cnt[0]                ; Merged with LEDBlinker:inst33|counter[0] ;
+; PulseGenerator:inst14|s_cnt[1]                ; Merged with LEDBlinker:inst33|counter[1] ;
+; Total Number of Removed Registers = 9         ;                                          ;
++-----------------------------------------------+------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                 ;
++----------------------------------------+---------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal        ; Registers Removed due to This Register ;
++----------------------------------------+---------------------------+----------------------------------------+
+; ProgramController:inst|desired_temp[0] ; Stuck at GND              ; Temperature_Control:inst1|s_temp[0]    ;
+;                                        ; due to stuck port data_in ;                                        ;
++----------------------------------------+---------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 273   ;
+; Number of registers using Synchronous Clear  ; 96    ;
+; Number of registers using Synchronous Load   ; 17    ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 126   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; Temperature_Control:inst1|s_temp[4]    ; 12      ;
+; Temperature_Control:inst1|s_temp[2]    ; 12      ;
+; BUTTON:inst3|PB2_reg                   ; 1       ;
+; BUTTON:inst3|PB1_reg                   ; 2       ;
+; BUTTON2:inst2|PB1_reg                  ; 2       ;
+; BUTTON2:inst2|PB2_reg                  ; 1       ;
+; Total number of inverted registers = 6 ;         ;
++----------------------------------------+---------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |ProgramControler_Demo|BUTTON:inst3|PUSH_COUNTER1[3]          ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |ProgramControler_Demo|BUTTON2:inst2|PUSH_COUNTER1[3]         ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |ProgramControler_Demo|Timer:inst11|s_initial_val[6]          ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |ProgramControler_Demo|Timer:inst11|s_initial_val[1]          ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |ProgramControler_Demo|DeBounce:inst10|stable_counter[17]     ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |ProgramControler_Demo|DeBounce:inst16|stable_counter[19]     ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |ProgramControler_Demo|DeBounce:inst17|stable_counter[18]     ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |ProgramControler_Demo|ProgramController:inst|desired_time[1] ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |ProgramControler_Demo|ProgramController:inst|desired_time[2] ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 10 LEs               ; 5 LEs                  ; Yes        ; |ProgramControler_Demo|ProgramController:inst|desired_temp[1] ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 10 LEs               ; 5 LEs                  ; Yes        ; |ProgramControler_Demo|Temperature_Control:inst1|s_temp[3]    ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |ProgramControler_Demo|Temperature_Control:inst1|s_temp[4]    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: PulseGenerator:inst14 ;
++----------------+----------+----------------------------------------+
+; Parameter Name ; Value    ; Type                                   ;
++----------------+----------+----------------------------------------+
+; max            ; 50000000 ; Signed Integer                         ;
++----------------+----------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: BinToBCD:inst5|lpm_divide:Mod1 ;
++------------------------+----------------+---------------------------------------+
+; Parameter Name         ; Value          ; Type                                  ;
++------------------------+----------------+---------------------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                               ;
+; LPM_WIDTHD             ; 8              ; Untyped                               ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                               ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                               ;
+; LPM_PIPELINE           ; 0              ; Untyped                               ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                               ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                               ;
+; CBXI_PARAMETER         ; lpm_divide_q9m ; Untyped                               ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                               ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                               ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                            ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                          ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                          ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                        ;
++------------------------+----------------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: BinToBCD:inst5|lpm_divide:Mod0 ;
++------------------------+----------------+---------------------------------------+
+; Parameter Name         ; Value          ; Type                                  ;
++------------------------+----------------+---------------------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                               ;
+; LPM_WIDTHD             ; 8              ; Untyped                               ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                               ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                               ;
+; LPM_PIPELINE           ; 0              ; Untyped                               ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                               ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                               ;
+; CBXI_PARAMETER         ; lpm_divide_q9m ; Untyped                               ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                               ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                               ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                            ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                          ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                          ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                        ;
++------------------------+----------------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: BinToBCD:inst5|lpm_divide:Div1 ;
++------------------------+----------------+---------------------------------------+
+; Parameter Name         ; Value          ; Type                                  ;
++------------------------+----------------+---------------------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                               ;
+; LPM_WIDTHD             ; 4              ; Untyped                               ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                               ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                               ;
+; LPM_PIPELINE           ; 0              ; Untyped                               ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                               ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                               ;
+; CBXI_PARAMETER         ; lpm_divide_jhm ; Untyped                               ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                               ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                               ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                            ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                          ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                          ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                        ;
++------------------------+----------------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: BinToBCD:inst5|lpm_divide:Div0 ;
++------------------------+----------------+---------------------------------------+
+; Parameter Name         ; Value          ; Type                                  ;
++------------------------+----------------+---------------------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                               ;
+; LPM_WIDTHD             ; 7              ; Untyped                               ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                               ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                               ;
+; LPM_PIPELINE           ; 0              ; Untyped                               ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                               ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                               ;
+; CBXI_PARAMETER         ; lpm_divide_mhm ; Untyped                               ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                               ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                               ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                            ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                          ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                          ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                        ;
++------------------------+----------------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: BinToBCD:inst13|lpm_divide:Mod1 ;
++------------------------+----------------+----------------------------------------+
+; Parameter Name         ; Value          ; Type                                   ;
++------------------------+----------------+----------------------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                                ;
+; LPM_WIDTHD             ; 8              ; Untyped                                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                ;
+; LPM_PIPELINE           ; 0              ; Untyped                                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                ;
+; CBXI_PARAMETER         ; lpm_divide_q9m ; Untyped                                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                         ;
++------------------------+----------------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: BinToBCD:inst13|lpm_divide:Mod0 ;
++------------------------+----------------+----------------------------------------+
+; Parameter Name         ; Value          ; Type                                   ;
++------------------------+----------------+----------------------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                                ;
+; LPM_WIDTHD             ; 8              ; Untyped                                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                ;
+; LPM_PIPELINE           ; 0              ; Untyped                                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                ;
+; CBXI_PARAMETER         ; lpm_divide_q9m ; Untyped                                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                         ;
++------------------------+----------------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: BinToBCD:inst13|lpm_divide:Div1 ;
++------------------------+----------------+----------------------------------------+
+; Parameter Name         ; Value          ; Type                                   ;
++------------------------+----------------+----------------------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                                ;
+; LPM_WIDTHD             ; 4              ; Untyped                                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                ;
+; LPM_PIPELINE           ; 0              ; Untyped                                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                ;
+; CBXI_PARAMETER         ; lpm_divide_jhm ; Untyped                                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                         ;
++------------------------+----------------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: ProgramController:inst|lpm_divide:Div0 ;
++------------------------+----------------+-----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                          ;
++------------------------+----------------+-----------------------------------------------+
+; LPM_WIDTHN             ; 10             ; Untyped                                       ;
+; LPM_WIDTHD             ; 5              ; Untyped                                       ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                                       ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                                       ;
+; LPM_PIPELINE           ; 0              ; Untyped                                       ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                                       ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                       ;
+; CBXI_PARAMETER         ; lpm_divide_l0p ; Untyped                                       ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                       ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                       ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                    ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                  ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                  ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                ;
++------------------------+----------------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 83                          ;
+; cycloneiii_ff         ; 273                         ;
+;     ENA               ; 17                          ;
+;     ENA SCLR          ; 96                          ;
+;     ENA SLD           ; 13                          ;
+;     SLD               ; 4                           ;
+;     plain             ; 143                         ;
+; cycloneiii_lcell_comb ; 1115                        ;
+;     arith             ; 382                         ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 245                         ;
+;         3 data inputs ; 136                         ;
+;     normal            ; 733                         ;
+;         0 data inputs ; 35                          ;
+;         1 data inputs ; 18                          ;
+;         2 data inputs ; 282                         ;
+;         3 data inputs ; 107                         ;
+;         4 data inputs ; 291                         ;
+;                       ;                             ;
+; Max LUT depth         ; 22.40                       ;
+; Average LUT depth     ; 8.59                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:04     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
+    Info: Processing started: Sat Jun  1 23:51:21 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ProgramControler_Demo -c ProgramControler_Demo
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file ProgramController.vhd
+    Info (12022): Found design unit 1: ProgramController-Behavioral File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/ProgramController.vhd Line: 19
+    Info (12023): Found entity 1: ProgramController File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/ProgramController.vhd Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file ProgramControler_Demo.bdf
+    Info (12023): Found entity 1: ProgramControler_Demo
+Info (12021): Found 2 design units, including 1 entities, in source file UserControl.vhd
+    Info (12022): Found design unit 1: UserControl-Behavioral File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/UserControl.vhd Line: 21
+    Info (12023): Found entity 1: UserControl File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/UserControl.vhd Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file User_Control_Demo.bdf
+    Info (12023): Found entity 1: User_Control_Demo
+Info (12021): Found 2 design units, including 1 entities, in source file TimeCount.vhd
+    Info (12022): Found design unit 1: TimeCount-Behav File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/TimeCount.vhd Line: 16
+    Info (12023): Found entity 1: TimeCount File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/TimeCount.vhd Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file TimeCount_Demo.bdf
+    Info (12023): Found entity 1: TimeCount_Demo
+Info (12021): Found 2 design units, including 1 entities, in source file ZeroOutputs.vhd
+    Info (12022): Found design unit 1: ZeroOutputs-Behavioral File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/ZeroOutputs.vhd Line: 15
+    Info (12023): Found entity 1: ZeroOutputs File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/ZeroOutputs.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file control.vhd
+    Info (12022): Found design unit 1: control-Behavioral File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/control.vhd Line: 18
+    Info (12023): Found entity 1: control File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/control.vhd Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file contro_Demo.bdf
+    Info (12023): Found entity 1: contro_Demo
+Info (12021): Found 2 design units, including 1 entities, in source file DeBounce.vhd
+    Info (12022): Found design unit 1: DeBounce-Behavioral File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/DeBounce.vhd Line: 11
+    Info (12023): Found entity 1: DeBounce File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/DeBounce.vhd Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file Inside_Debounce.bdf
+    Info (12023): Found entity 1: Inside_Debounce
+Info (12021): Found 2 design units, including 1 entities, in source file Time_Control.vhd
+    Info (12022): Found design unit 1: Time_Control-Behavioral File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/Time_Control.vhd Line: 14
+    Info (12023): Found entity 1: Time_Control File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/Time_Control.vhd Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file Teste_Demo.bdf
+    Info (12023): Found entity 1: Teste_Demo
+Info (12021): Found 2 design units, including 1 entities, in source file BUTTON.vhd
+    Info (12022): Found design unit 1: BUTTON-a File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/BUTTON.vhd Line: 14
+    Info (12023): Found entity 1: BUTTON File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/BUTTON.vhd Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file BUTTON_Demo.bdf
+    Info (12023): Found entity 1: BUTTON_Demo
+Info (12021): Found 2 design units, including 1 entities, in source file BUTTON2.vhd
+    Info (12022): Found design unit 1: BUTTON2-a File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/BUTTON2.vhd Line: 14
+    Info (12023): Found entity 1: BUTTON2 File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/BUTTON2.vhd Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file BUTTON2_Demo.bdf
+    Info (12023): Found entity 1: BUTTON2_Demo
+Info (12021): Found 2 design units, including 1 entities, in source file ModeSelector.vhd
+    Info (12022): Found design unit 1: ModeSelector-Behavior File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/ModeSelector.vhd Line: 17
+    Info (12023): Found entity 1: ModeSelector File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/ModeSelector.vhd Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file BUTTONS_Demo.bdf
+    Info (12023): Found entity 1: BUTTONS_Demo
+Info (12021): Found 2 design units, including 1 entities, in source file HeatCool.vhd
+    Info (12022): Found design unit 1: HeatCool-Behavioral File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/HeatCool.vhd Line: 17
+    Info (12023): Found entity 1: HeatCool File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/HeatCool.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file Temperature_Control.vhd
+    Info (12022): Found design unit 1: Temperature_Control-Behavioral File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/Temperature_Control.vhd Line: 15
+    Info (12023): Found entity 1: Temperature_Control File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/Temperature_Control.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file BinToBCD.vhd
+    Info (12022): Found design unit 1: BinToBCD-Behavioral File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/BinToBCD.vhd Line: 14
+    Info (12023): Found entity 1: BinToBCD File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/BinToBCD.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file Bin7SegDecoder.vhd
+    Info (12022): Found design unit 1: Bin7SegDecoder-Behavioral File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/Bin7SegDecoder.vhd Line: 22
+    Info (12023): Found entity 1: Bin7SegDecoder File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/Bin7SegDecoder.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file Bin7SegDecoder2.vhd
+    Info (12022): Found design unit 1: Bin7SegDecoder2-Behavioral File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/Bin7SegDecoder2.vhd Line: 21
+    Info (12023): Found entity 1: Bin7SegDecoder2 File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/Bin7SegDecoder2.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file Timer.vhd
+    Info (12022): Found design unit 1: Timer-behavioral File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/Timer.vhd Line: 15
+    Info (12023): Found entity 1: Timer File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/Timer.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file PulseGenerator.vhd
+    Info (12022): Found design unit 1: PulseGenerator-Behavioral File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/PulseGenerator.vhd Line: 10
+    Info (12023): Found entity 1: PulseGenerator File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/PulseGenerator.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file StateMachine.vhd
+    Info (12022): Found design unit 1: StateMachine-Behavioral File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/StateMachine.vhd Line: 20
+    Info (12023): Found entity 1: StateMachine File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/StateMachine.vhd Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file StateMachineToTimer.bdf
+    Info (12023): Found entity 1: StateMachineToTimer
+Info (12021): Found 2 design units, including 1 entities, in source file PulseGenerator2.vhd
+    Info (12022): Found design unit 1: PulseGenerator2-Behavioral File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/PulseGenerator2.vhd Line: 13
+    Info (12023): Found entity 1: PulseGenerator2 File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/PulseGenerator2.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file SelectInput.vhd
+    Info (12022): Found design unit 1: SelectInput-Behavioral File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/SelectInput.vhd Line: 13
+    Info (12023): Found entity 1: SelectInput File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/SelectInput.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file LEDBlinker.vhd
+    Info (12022): Found design unit 1: LEDBlinker-Behavioral File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/LEDBlinker.vhd Line: 13
+    Info (12023): Found entity 1: LEDBlinker File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/LEDBlinker.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file EnableControl.vhd
+    Info (12022): Found design unit 1: EnableControl-Behavioral File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/EnableControl.vhd Line: 12
+    Info (12023): Found entity 1: EnableControl File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/EnableControl.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file ProgramControler_Demo1.vhd
+    Info (12022): Found design unit 1: ProgramControler_Demo1-bdf_type File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/ProgramControler_Demo1.vhd Line: 24
+    Info (12023): Found entity 1: ProgramControler_Demo1 File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/ProgramControler_Demo1.vhd Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file User_cook_demo.bdf
+    Info (12023): Found entity 1: User_cook_demo
+Info (12021): Found 1 design units, including 1 entities, in source file User.bdf
+    Info (12023): Found entity 1: User
+Info (12021): Found 2 design units, including 1 entities, in source file SeletorDeEntradas.vhd
+    Info (12022): Found design unit 1: SeletorDeEntradas-Behavioral File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/SeletorDeEntradas.vhd Line: 18
+    Info (12023): Found entity 1: SeletorDeEntradas File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/SeletorDeEntradas.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file RangeComparator1.vhd
+    Info (12022): Found design unit 1: RangeComparator1-Behavioral File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/RangeComparator1.vhd Line: 13
+    Info (12023): Found entity 1: RangeComparator1 File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/RangeComparator1.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file RangeComparator2.vhd
+    Info (12022): Found design unit 1: RangeComparator2-Behavioral File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/RangeComparator2.vhd Line: 13
+    Info (12023): Found entity 1: RangeComparator2 File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/RangeComparator2.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file BitToVector.vhd
+    Info (12022): Found design unit 1: BitToVector-Behavioral File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/BitToVector.vhd Line: 11
+    Info (12023): Found entity 1: BitToVector File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/BitToVector.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file BitToVector2.vhd
+    Info (12022): Found design unit 1: BitToVector2-Behavioral File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/BitToVector2.vhd Line: 11
+    Info (12023): Found entity 1: BitToVector2 File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/BitToVector2.vhd Line: 4
+Info (12127): Elaborating entity "ProgramControler_Demo" for the top level hierarchy
+Info (12128): Elaborating entity "Bin7SegDecoder" for hierarchy "Bin7SegDecoder:inst6"
+Info (12128): Elaborating entity "StateMachine" for hierarchy "StateMachine:inst22"
+Warning (10631): VHDL Process Statement warning at StateMachine.vhd(42): inferring latch(es) for signal or variable "s_starter_time", which holds its previous value in one or more paths through the process File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/StateMachine.vhd Line: 42
+Info (10041): Inferred latch for "s_starter_time" at StateMachine.vhd(42) File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/StateMachine.vhd Line: 42
+Info (12128): Elaborating entity "Timer" for hierarchy "Timer:inst11"
+Info (12128): Elaborating entity "PulseGenerator" for hierarchy "PulseGenerator:inst14"
+Info (12128): Elaborating entity "ProgramController" for hierarchy "ProgramController:inst"
+Info (12128): Elaborating entity "ModeSelector" for hierarchy "ModeSelector:inst21"
+Warning (10631): VHDL Process Statement warning at ModeSelector.vhd(19): inferring latch(es) for signal or variable "time_out_cook", which holds its previous value in one or more paths through the process File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/ModeSelector.vhd Line: 19
+Warning (10631): VHDL Process Statement warning at ModeSelector.vhd(19): inferring latch(es) for signal or variable "temp_out_cook", which holds its previous value in one or more paths through the process File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/ModeSelector.vhd Line: 19
+Warning (10631): VHDL Process Statement warning at ModeSelector.vhd(19): inferring latch(es) for signal or variable "time_out_pre", which holds its previous value in one or more paths through the process File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/ModeSelector.vhd Line: 19
+Warning (10631): VHDL Process Statement warning at ModeSelector.vhd(19): inferring latch(es) for signal or variable "temp_out_pre", which holds its previous value in one or more paths through the process File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/ModeSelector.vhd Line: 19
+Info (10041): Inferred latch for "temp_out_pre[0]" at ModeSelector.vhd(19) File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/ModeSelector.vhd Line: 19
+Info (10041): Inferred latch for "temp_out_pre[1]" at ModeSelector.vhd(19) File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/ModeSelector.vhd Line: 19
+Info (10041): Inferred latch for "temp_out_pre[2]" at ModeSelector.vhd(19) File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/ModeSelector.vhd Line: 19
+Info (10041): Inferred latch for "temp_out_pre[3]" at ModeSelector.vhd(19) File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/ModeSelector.vhd Line: 19
+Info (10041): Inferred latch for "temp_out_pre[4]" at ModeSelector.vhd(19) File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/ModeSelector.vhd Line: 19
+Info (10041): Inferred latch for "temp_out_pre[5]" at ModeSelector.vhd(19) File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/ModeSelector.vhd Line: 19
+Info (10041): Inferred latch for "temp_out_pre[6]" at ModeSelector.vhd(19) File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/ModeSelector.vhd Line: 19
+Info (10041): Inferred latch for "temp_out_pre[7]" at ModeSelector.vhd(19) File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/ModeSelector.vhd Line: 19
+Info (10041): Inferred latch for "time_out_pre[0]" at ModeSelector.vhd(19) File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/ModeSelector.vhd Line: 19
+Info (10041): Inferred latch for "time_out_pre[1]" at ModeSelector.vhd(19) File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/ModeSelector.vhd Line: 19
+Info (10041): Inferred latch for "time_out_pre[2]" at ModeSelector.vhd(19) File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/ModeSelector.vhd Line: 19
+Info (10041): Inferred latch for "time_out_pre[3]" at ModeSelector.vhd(19) File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/ModeSelector.vhd Line: 19
+Info (10041): Inferred latch for "time_out_pre[4]" at ModeSelector.vhd(19) File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/ModeSelector.vhd Line: 19
+Info (10041): Inferred latch for "time_out_pre[5]" at ModeSelector.vhd(19) File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/ModeSelector.vhd Line: 19
+Info (10041): Inferred latch for "time_out_pre[6]" at ModeSelector.vhd(19) File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/ModeSelector.vhd Line: 19
+Info (10041): Inferred latch for "time_out_pre[7]" at ModeSelector.vhd(19) File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/ModeSelector.vhd Line: 19
+Info (10041): Inferred latch for "temp_out_cook[0]" at ModeSelector.vhd(19) File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/ModeSelector.vhd Line: 19
+Info (10041): Inferred latch for "temp_out_cook[1]" at ModeSelector.vhd(19) File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/ModeSelector.vhd Line: 19
+Info (10041): Inferred latch for "temp_out_cook[2]" at ModeSelector.vhd(19) File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/ModeSelector.vhd Line: 19
+Info (10041): Inferred latch for "temp_out_cook[3]" at ModeSelector.vhd(19) File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/ModeSelector.vhd Line: 19
+Info (10041): Inferred latch for "temp_out_cook[4]" at ModeSelector.vhd(19) File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/ModeSelector.vhd Line: 19
+Info (10041): Inferred latch for "temp_out_cook[5]" at ModeSelector.vhd(19) File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/ModeSelector.vhd Line: 19
+Info (10041): Inferred latch for "temp_out_cook[6]" at ModeSelector.vhd(19) File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/ModeSelector.vhd Line: 19
+Info (10041): Inferred latch for "temp_out_cook[7]" at ModeSelector.vhd(19) File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/ModeSelector.vhd Line: 19
+Info (10041): Inferred latch for "time_out_cook[0]" at ModeSelector.vhd(19) File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/ModeSelector.vhd Line: 19
+Info (10041): Inferred latch for "time_out_cook[1]" at ModeSelector.vhd(19) File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/ModeSelector.vhd Line: 19
+Info (10041): Inferred latch for "time_out_cook[2]" at ModeSelector.vhd(19) File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/ModeSelector.vhd Line: 19
+Info (10041): Inferred latch for "time_out_cook[3]" at ModeSelector.vhd(19) File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/ModeSelector.vhd Line: 19
+Info (10041): Inferred latch for "time_out_cook[4]" at ModeSelector.vhd(19) File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/ModeSelector.vhd Line: 19
+Info (10041): Inferred latch for "time_out_cook[5]" at ModeSelector.vhd(19) File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/ModeSelector.vhd Line: 19
+Info (10041): Inferred latch for "time_out_cook[6]" at ModeSelector.vhd(19) File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/ModeSelector.vhd Line: 19
+Info (10041): Inferred latch for "time_out_cook[7]" at ModeSelector.vhd(19) File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/ModeSelector.vhd Line: 19
+Info (12128): Elaborating entity "BUTTON2" for hierarchy "BUTTON2:inst2"
+Info (12128): Elaborating entity "BUTTON" for hierarchy "BUTTON:inst3"
+Info (12128): Elaborating entity "DeBounce" for hierarchy "DeBounce:inst10"
+Info (12128): Elaborating entity "BinToBCD" for hierarchy "BinToBCD:inst5"
+Info (12128): Elaborating entity "Temperature_Control" for hierarchy "Temperature_Control:inst1"
+Info (12128): Elaborating entity "HeatCool" for hierarchy "HeatCool:inst7"
+Info (12128): Elaborating entity "EnableControl" for hierarchy "EnableControl:inst37"
+Info (12128): Elaborating entity "Bin7SegDecoder2" for hierarchy "Bin7SegDecoder2:inst8"
+Info (12128): Elaborating entity "PulseGenerator2" for hierarchy "PulseGenerator2:inst28"
+Info (12128): Elaborating entity "BitToVector" for hierarchy "BitToVector:inst23"
+Info (12128): Elaborating entity "RangeComparator2" for hierarchy "RangeComparator2:inst20"
+Info (12128): Elaborating entity "SeletorDeEntradas" for hierarchy "SeletorDeEntradas:inst12"
+Info (12128): Elaborating entity "SelectInput" for hierarchy "SelectInput:inst32"
+Info (12128): Elaborating entity "LEDBlinker" for hierarchy "LEDBlinker:inst33"
+Info (12128): Elaborating entity "BitToVector2" for hierarchy "BitToVector2:inst24"
+Info (12128): Elaborating entity "RangeComparator1" for hierarchy "RangeComparator1:inst18"
+Info (278001): Inferred 8 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "BinToBCD:inst5|Mod1" File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/BinToBCD.vhd Line: 26
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "BinToBCD:inst5|Mod0" File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/BinToBCD.vhd Line: 25
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "BinToBCD:inst5|Div1" File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/BinToBCD.vhd Line: 25
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "BinToBCD:inst5|Div0" File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/BinToBCD.vhd Line: 24
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "BinToBCD:inst13|Mod1" File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/BinToBCD.vhd Line: 26
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "BinToBCD:inst13|Mod0" File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/BinToBCD.vhd Line: 25
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "BinToBCD:inst13|Div1" File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/BinToBCD.vhd Line: 25
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ProgramController:inst|Div0" File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/ProgramController.vhd Line: 122
+Info (12130): Elaborated megafunction instantiation "BinToBCD:inst5|lpm_divide:Mod1" File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/BinToBCD.vhd Line: 26
+Info (12133): Instantiated megafunction "BinToBCD:inst5|lpm_divide:Mod1" with the following parameter: File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/BinToBCD.vhd Line: 26
+    Info (12134): Parameter "LPM_WIDTHN" = "8"
+    Info (12134): Parameter "LPM_WIDTHD" = "8"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_q9m.tdf
+    Info (12023): Found entity 1: lpm_divide_q9m File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/db/lpm_divide_q9m.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_fkh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_fkh File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/db/sign_div_unsign_fkh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_i4f.tdf
+    Info (12023): Found entity 1: alt_u_div_i4f File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/db/alt_u_div_i4f.tdf Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_7pc.tdf
+    Info (12023): Found entity 1: add_sub_7pc File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/db/add_sub_7pc.tdf Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_8pc.tdf
+    Info (12023): Found entity 1: add_sub_8pc File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/db/add_sub_8pc.tdf Line: 23
+Info (12130): Elaborated megafunction instantiation "BinToBCD:inst5|lpm_divide:Mod0" File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/BinToBCD.vhd Line: 25
+Info (12133): Instantiated megafunction "BinToBCD:inst5|lpm_divide:Mod0" with the following parameter: File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/BinToBCD.vhd Line: 25
+    Info (12134): Parameter "LPM_WIDTHN" = "8"
+    Info (12134): Parameter "LPM_WIDTHD" = "8"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12130): Elaborated megafunction instantiation "BinToBCD:inst5|lpm_divide:Div1" File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/BinToBCD.vhd Line: 25
+Info (12133): Instantiated megafunction "BinToBCD:inst5|lpm_divide:Div1" with the following parameter: File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/BinToBCD.vhd Line: 25
+    Info (12134): Parameter "LPM_WIDTHN" = "8"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_jhm.tdf
+    Info (12023): Found entity 1: lpm_divide_jhm File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/db/lpm_divide_jhm.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_bkh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_bkh File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/db/sign_div_unsign_bkh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_a4f.tdf
+    Info (12023): Found entity 1: alt_u_div_a4f File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/db/alt_u_div_a4f.tdf Line: 27
+Info (12130): Elaborated megafunction instantiation "BinToBCD:inst5|lpm_divide:Div0" File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/BinToBCD.vhd Line: 24
+Info (12133): Instantiated megafunction "BinToBCD:inst5|lpm_divide:Div0" with the following parameter: File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/BinToBCD.vhd Line: 24
+    Info (12134): Parameter "LPM_WIDTHN" = "8"
+    Info (12134): Parameter "LPM_WIDTHD" = "7"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_mhm.tdf
+    Info (12023): Found entity 1: lpm_divide_mhm File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/db/lpm_divide_mhm.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_ekh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_ekh File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/db/sign_div_unsign_ekh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_g4f.tdf
+    Info (12023): Found entity 1: alt_u_div_g4f File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/db/alt_u_div_g4f.tdf Line: 27
+Info (12130): Elaborated megafunction instantiation "BinToBCD:inst13|lpm_divide:Mod1" File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/BinToBCD.vhd Line: 26
+Info (12133): Instantiated megafunction "BinToBCD:inst13|lpm_divide:Mod1" with the following parameter: File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/BinToBCD.vhd Line: 26
+    Info (12134): Parameter "LPM_WIDTHN" = "8"
+    Info (12134): Parameter "LPM_WIDTHD" = "8"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12130): Elaborated megafunction instantiation "BinToBCD:inst13|lpm_divide:Mod0" File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/BinToBCD.vhd Line: 25
+Info (12133): Instantiated megafunction "BinToBCD:inst13|lpm_divide:Mod0" with the following parameter: File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/BinToBCD.vhd Line: 25
+    Info (12134): Parameter "LPM_WIDTHN" = "8"
+    Info (12134): Parameter "LPM_WIDTHD" = "8"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12130): Elaborated megafunction instantiation "ProgramController:inst|lpm_divide:Div0" File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/ProgramController.vhd Line: 122
+Info (12133): Instantiated megafunction "ProgramController:inst|lpm_divide:Div0" with the following parameter: File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/ProgramController.vhd Line: 122
+    Info (12134): Parameter "LPM_WIDTHN" = "10"
+    Info (12134): Parameter "LPM_WIDTHD" = "5"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_l0p.tdf
+    Info (12023): Found entity 1: lpm_divide_l0p File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/db/lpm_divide_l0p.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/abs_divider_gbg.tdf
+    Info (12023): Found entity 1: abs_divider_gbg File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/db/abs_divider_gbg.tdf Line: 29
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_u6f.tdf
+    Info (12023): Found entity 1: alt_u_div_u6f File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/db/alt_u_div_u6f.tdf Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_2v9.tdf
+    Info (12023): Found entity 1: lpm_abs_2v9 File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/db/lpm_abs_2v9.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_e0a.tdf
+    Info (12023): Found entity 1: lpm_abs_e0a File: /home/francisco/Desktop/lsd/pratico/projetofinal/Projeto_versao_Final/programController/db/lpm_abs_e0a.tdf Line: 25
+Info (13014): Ignored 8 buffer(s)
+    Info (13016): Ignored 8 CARRY_SUM buffer(s)
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "HEX2[5]" is stuck at VCC
+    Warning (13410): Pin "HEX4[5]" is stuck at VCC
+    Warning (13410): Pin "HEX4[4]" is stuck at VCC
+    Warning (13410): Pin "HEX4[3]" is stuck at VCC
+    Warning (13410): Pin "HEX4[2]" is stuck at VCC
+    Warning (13410): Pin "HEX4[1]" is stuck at VCC
+    Warning (13410): Pin "HEX4[0]" is stuck at VCC
+    Warning (13410): Pin "HEX5[5]" is stuck at VCC
+    Warning (13410): Pin "HEX5[4]" is stuck at VCC
+    Warning (13410): Pin "HEX5[3]" is stuck at VCC
+    Warning (13410): Pin "HEX5[2]" is stuck at VCC
+    Warning (13410): Pin "HEX5[1]" is stuck at VCC
+    Warning (13410): Pin "HEX5[0]" is stuck at VCC
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 3 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 1199 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 12 input pins
+    Info (21059): Implemented 71 output pins
+    Info (21061): Implemented 1116 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 20 warnings
+    Info: Peak virtual memory: 529 megabytes
+    Info: Processing ended: Sat Jun  1 23:51:39 2024
+    Info: Elapsed time: 00:00:18
+    Info: Total CPU time (on all processors): 00:00:49
+
+

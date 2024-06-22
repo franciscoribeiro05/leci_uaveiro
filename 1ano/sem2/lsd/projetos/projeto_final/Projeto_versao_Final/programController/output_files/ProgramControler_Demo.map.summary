@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Sat Jun  1 23:51:39 2024
+Quartus Prime Version : 22.1std.1 Build 917 02/14/2023 SC Lite Edition
+Revision Name : ProgramControler_Demo
+Top-level Entity Name : ProgramControler_Demo
+Family : Cyclone IV E
+Total logic elements : 1,114
+    Total combinational functions : 1,111
+    Dedicated logic registers : 273
+Total registers : 273
+Total pins : 83
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

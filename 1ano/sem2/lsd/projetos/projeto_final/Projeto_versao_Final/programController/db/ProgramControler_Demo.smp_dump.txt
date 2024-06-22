@@ -1,0 +1,32 @@
+
+State Machine - |ProgramControler_Demo|ProgramController:inst|selected_program
+Name selected_program.HAMBURGER selected_program.FILETES selected_program.BATATAS selected_program.RISSOIS selected_program.USER selected_program.DEFAULT 
+selected_program.DEFAULT 0 0 0 0 0 0 
+selected_program.USER 0 0 0 0 1 1 
+selected_program.RISSOIS 0 0 0 1 0 1 
+selected_program.BATATAS 0 0 1 0 0 1 
+selected_program.FILETES 0 1 0 0 0 1 
+selected_program.HAMBURGER 1 0 0 0 0 1 
+
+State Machine - |ProgramControler_Demo|ProgramController:inst|current_state
+Name current_state.FINISH current_state.WAITING current_state.COOLDOWN current_state.COOK current_state.PREHEAT current_state.IDLE current_state.OFF 
+current_state.OFF 0 0 0 0 0 0 0 
+current_state.IDLE 0 0 0 0 0 1 1 
+current_state.PREHEAT 0 0 0 0 1 0 1 
+current_state.COOK 0 0 0 1 0 0 1 
+current_state.COOLDOWN 0 0 1 0 0 0 1 
+current_state.WAITING 0 1 0 0 0 0 1 
+current_state.FINISH 1 0 0 0 0 0 1 
+
+State Machine - |ProgramControler_Demo|StateMachine:inst22|current_state
+Name current_state.FINISH current_state.COOLDOWN current_state.WAIT_C_COOK current_state.WAIT_O_COOK current_state.WAIT_C_PRE current_state.WAIT_O_PRE current_state.COOK current_state.PREHEAT current_state.IDLE current_state.OFF 
+current_state.OFF 0 0 0 0 0 0 0 0 0 0 
+current_state.IDLE 0 0 0 0 0 0 0 0 1 1 
+current_state.PREHEAT 0 0 0 0 0 0 0 1 0 1 
+current_state.COOK 0 0 0 0 0 0 1 0 0 1 
+current_state.WAIT_O_PRE 0 0 0 0 0 1 0 0 0 1 
+current_state.WAIT_C_PRE 0 0 0 0 1 0 0 0 0 1 
+current_state.WAIT_O_COOK 0 0 0 1 0 0 0 0 0 1 
+current_state.WAIT_C_COOK 0 0 1 0 0 0 0 0 0 1 
+current_state.COOLDOWN 0 1 0 0 0 0 0 0 0 1 
+current_state.FINISH 1 0 0 0 0 0 0 0 0 1 

@@ -1,0 +1,57 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+
+-- Entity declaration for Bin7SegDecoder
+entity Bin7SegDecoder2 is
+    port(
+        -- Input ports for three 4-bit binary numbers
+        binInput_0 : in std_logic_vector(3 downto 0);  -- First 4-bit binary input
+        binInput_1 : in std_logic_vector(3 downto 0);  -- Second 4-bit binary input
+        binInput_2 : in std_logic_vector(3 downto 0);  -- Third 4-bit binary input
+        
+        -- Output ports for seven-segment display
+        decOut_0 : out std_logic_vector(6 downto 0);  -- 7-segment output for first input
+        decOut_1 : out std_logic_vector(6 downto 0)  -- 7-segment output for second input 
+    );
+end Bin7SegDecoder2;
+
+architecture Behavioral of Bin7SegDecoder2 is
+begin
+    -- Process for the first 4-bit binary input to 7-segment output
+    decOut_0 <= "1111001" when (binInput_0 = "0001") else
+                "0100100" when (binInput_0 = "0010") else 
+                "0110000" when (binInput_0 = "0011") else
+                "0011001" when (binInput_0 = "0100") else
+                "0010010" when (binInput_0 = "0101") else
+                "0000010" when (binInput_0 = "0110") else
+                "1111000" when (binInput_0 = "0111") else
+                "0000000" when (binInput_0 = "1000") else
+                "0010000" when (binInput_0 = "1001") else
+                "0001000" when (binInput_0 = "1010") else
+                "0000011" when (binInput_0 = "1011") else
+                "1000110" when (binInput_0 = "1100") else
+                "0100001" when (binInput_0 = "1101") else
+                "0000110" when (binInput_0 = "1110") else
+                "0001110" when (binInput_0 = "1111") else
+                "1000000";  -- Default output for invalid input
+
+    -- Process for the second 4-bit binary input to 7-segment output
+    decOut_1 <= "1111001" when (binInput_1 = "0001") else
+                "0100100" when (binInput_1 = "0010") else 
+                "0110000" when (binInput_1 = "0011") else
+                "0011001" when (binInput_1 = "0100") else
+                "0010010" when (binInput_1 = "0101") else
+                "0000010" when (binInput_1 = "0110") else
+                "1111000" when (binInput_1 = "0111") else
+                "0000000" when (binInput_1 = "1000") else
+                "0010000" when (binInput_1 = "1001") else
+                "0001000" when (binInput_1 = "1010") else
+                "0000011" when (binInput_1 = "1011") else
+                "1000110" when (binInput_1 = "1100") else
+                "0100001" when (binInput_1 = "1101") else
+                "0000110" when (binInput_1 = "1110") else
+                "0001110" when (binInput_1 = "1111") else
+                "1000000";  -- Default output for invalid input
+
+
+end Behavioral;

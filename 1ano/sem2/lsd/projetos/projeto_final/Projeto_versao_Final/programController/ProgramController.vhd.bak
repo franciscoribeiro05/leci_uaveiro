@@ -1,0 +1,114 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity ProgramController is
+    port(
+        programs_sel : in std_logic_vector(2 downto 0);
+        state_in : in std_logic_vector(2 downto 0);
+        out_desired_time : out std_logic_vector(6 downto 0)
+        -- desired_temp : out integer range 0 to 300;            -- Commented out for testing
+        -- curr_time : out integer range 0 to 60;
+        -- curr_temp : out integer range 0 to 300
+    );
+end ProgramController;
+
+architecture Behavioral of ProgramController is
+    type State is (OFF, IDLE, PREHEAT, COOK, COOLDOWN, FINISH);
+    type Program is (DEFAULT, USER, RISSOIS, BATATAS, FILETES, HAMBURGER);
+    signal selected_program : Program := DEFAULT;
+    signal current_state : State;
+    -- signal temp_user : integer range 0 to 300 := 180;
+    signal time_user : integer range 0 to 60 := 15;
+    signal desired_time : integer range 0 to 60;
+begin
+    process(programs_sel, state_in)
+    begin
+        case state_in is
+            when "000" =>
+                current_state <= OFF;
+            when "001" =>
+                current_state <= IDLE;
+            when "010" =>
+                current_state <= PREHEAT;
+            when "100" =>
+                current_state <= COOK;
+            when "101" =>
+                current_state <= COOLDOWN;
+            when "111" =>
+                current_state <= FINISH;
+            when others => 
+                current_state <= OFF;
+        end case;
+
+        case programs_sel is
+            when "000" =>
+                selected_program <= DEFAULT;
+            when "001" =>
+                selected_program <= USER;
+            when "010" =>
+                selected_program <= RISSOIS;
+            when "011" =>
+                selected_program <= BATATAS;
+            when "100" =>
+                selected_program <= FILETES;
+            when "101" =>
+                selected_program <= HAMBURGER;
+            when others =>
+                selected_program <= DEFAULT;
+        end case;
+
+        if current_state = PREHEAT then
+            case selected_program is
+                when DEFAULT =>
+                    desired_time <= 18;
+                    -- desired_temp <= 200;
+                when USER =>
+                    desired_time <= time_user;
+                    -- desired_temp <= temp_user;
+                when RISSOIS =>
+                    desired_time <= 3;
+                    -- desired_temp <= 180;
+                when BATATAS =>
+                    desired_time <= 5;
+                    -- desired_temp <= 200;
+                when FILETES =>
+                    desired_time <= 3;
+                    -- desired_temp <= 170;
+                when HAMBURGER =>
+                    desired_time <= 3;
+                    -- desired_temp <= 170;
+                when others =>
+                    desired_time <= 0;
+            end case;
+        elsif current_state = COOK then
+            case selected_program is
+                when DEFAULT =>
+                    desired_time <= 18;
+                    -- desired_temp <= 200;
+                when USER =>
+                    desired_time <= time_user;
+                    -- desired_temp <= temp_user;
+                when RISSOIS =>
+                    desired_time <= 15;
+                    -- desired_temp <= 180;
+                when BATATAS =>
+                    desired_time <= 20;
+                    -- desired_temp <= 200;
+                when FILETES =>
+                    desired_time <= 20;
+                    -- desired_temp <= 170;
+                when HAMBURGER =>
+                    desired_time <= 20;
+                    -- desired_temp <= 170;
+                when others =>
+                    desired_time <= 0;
+            end case;
+        else
+            -- desired_temp = 20;
+            desired_time <= 0; 
+        end if;
+    end process;
+
+    out_desired_time <= std_logic_vector(to_unsigned(desired_time, 7));
+end Behavioral;

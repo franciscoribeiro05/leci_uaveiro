@@ -1,0 +1,57 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.std_logic_arith.all;
+use IEEE.std_logic_unsigned.all;
+
+-- Entity declaration for the block
+entity HeatCool is
+    port (
+        clk   : in  std_logic;                       -- Clock input
+        state : in  std_logic_vector (2 downto 0);   -- 3-bit input
+        heat  : out std_logic;                       -- First 1-bit output
+        cool  : out std_logic                        -- Second 1-bit output
+    );
+end HeatCool;
+
+-- Architecture definition for the block
+architecture Behavioral of HeatCool is
+    -- Internal signals to be used within the process
+    signal s_heat : std_logic;
+    signal s_cool : std_logic;
+begin
+    -- Process that triggers on the rising edge of the clock
+    process(clk)
+    begin
+        if rising_edge(clk) then
+            case s_state is
+            when "000" =>
+                s_heat <= '0';
+                s_cool <= '0';
+            when "001" =>
+                s_heat <= '0';
+                s_cool <= '0';
+            when "010" =>
+                s_heat <= '1';
+                s_cool <= '0';
+            when "011" =>
+                s_heat <= '0';
+                s_cool <= '0';
+            when "100" =>
+                s_heat <= '0';
+                s_cool <= '0';
+            when "101" =>
+                s_heat <= '0';
+                s_cool <= '1';
+            when "111" => 
+                s_heat <= '0';
+                s_cool <= '0';
+            when others =>
+                s_heat <= '0';
+                s_cool <= '0';
+        end case;
+        end if;
+    end process;
+    -- Associating internal signals to the outputs
+    heat <= s_heat;
+    cool <= s_cool;
+end Behavioral;

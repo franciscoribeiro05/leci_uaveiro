@@ -1,0 +1,482 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+!s11e vcom 2021.2 2021.04, Apr 14 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 d/home/francisco/Desktop/lsd/pratico/testes_blocos_pf/programController/simulation/qsim
+T_opt
+Z2 !s110 1716645421
+VPbO=<oO@3o0l^E?khOgU92
+04 33 26 work programcontroler_demo_vhd_vec_tst programcontroler_demo_arch 1
+=1-000ae431a4f1-6651ee2d-74571-26ab
+Z3 !s124 OEM10U3 
+Z4 o-quiet -auto_acc_if_foreign -work work -L cycloneive -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim +acc
+Z5 tCvgOpt 0
+n@_opt
+Z6 OL;O;2021.2;73
+R1
+T_opt1
+Z7 !s110 1716866034
+V@=oeLC@Qmd3fFcUjA?^d_1
+04 23 16 work usercontrol_vhd_vec_tst usercontrol_arch 1
+=1-000ae431a4f1-66554bf2-6ac5d-1065c
+R3
+R4
+R5
+n@_opt1
+R6
+R1
+T_opt2
+!s110 1717082649
+VjZ]6:nk_Me:>4[7`aDHjT3
+04 31 24 work statemachinetotimer_vhd_vec_tst statemachinetotimer_arch 1
+=1-000ae431a4f1-66589a18-768b3-4e62
+R3
+R4
+R5
+n@_opt2
+R6
+Ehard_block
+Z8 w1717082646
+Z9 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z10 DPx10 cycloneive 20 cycloneive_atom_pack 0 22 6S28[1QBDoOP06gI0Zb0G0
+Z11 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z12 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z13 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+Z14 DPx10 cycloneive 21 cycloneive_components 0 22 Nd`ohOono4@[G3MFGRlJS2
+!i122 46
+R1
+Z15 8ProgramControler_Demo.vho
+Z16 FProgramControler_Demo.vho
+l0
+L35 1
+VB]0;STalBkCB1_B4BXQDW2
+!s100 >mXi5[`cD`bFC`UBKA<om3
+Z17 OL;C;2021.2;73
+32
+Z18 !s110 1717082647
+!i10b 1
+Z19 !s108 1717082647.000000
+Z20 !s90 -work|work|ProgramControler_Demo.vho|
+Z21 !s107 ProgramControler_Demo.vho|
+!i113 0
+Z22 o-work work
+Z23 tExplicit 1 CvgOpt 0
+Astructure
+R9
+R10
+R11
+R12
+R13
+R14
+DEx4 work 10 hard_block 0 22 B]0;STalBkCB1_B4BXQDW2
+!i122 46
+l65
+L51 20
+Via>5o7W??azG@W@@eFOTF0
+!s100 [5;Wd8QGQ>@2NGoJ1I]Y43
+R17
+32
+R18
+!i10b 1
+R19
+R20
+R21
+!i113 0
+R22
+R23
+Eprogramcontroler_demo
+Z24 w1716645420
+R10
+R14
+R9
+Z25 DPx6 altera 11 dffeas_pack 0 22 e00>IzQH:zzKLmoiZWR@Y1
+R11
+R12
+R13
+Z26 DPx6 altera 28 altera_primitives_components 0 22 LmYK4j9cM>=6]FFXgTbb31
+!i122 28
+R1
+R15
+R16
+l0
+Z27 L80 1
+VKDKM3BhI@W]>MBfA^iV?J3
+!s100 ZIK3TDl2ENVan<TTj9hQa1
+R17
+32
+R2
+!i10b 1
+Z28 !s108 1716645421.000000
+R20
+R21
+!i113 0
+R22
+R23
+Astructure
+R10
+R14
+R9
+R25
+R11
+R12
+R13
+R26
+DEx4 work 21 programcontroler_demo 0 22 KDKM3BhI@W]>MBfA^iV?J3
+!i122 28
+l164
+L105 662
+VeXn3GRJ8]=Y^mmS?PbH411
+!s100 :^5zBjfmPM?NgWW2VP:Dz1
+R17
+32
+R2
+!i10b 1
+R28
+R20
+R21
+!i113 0
+R22
+R23
+Eprogramcontroler_demo_vhd_vec_tst
+Z29 w1716645419
+R12
+R13
+!i122 29
+R1
+Z30 8Waveform3.vwf.vht
+Z31 FWaveform3.vwf.vht
+l0
+Z32 L32 1
+VOPT>`TDI1TBP_US0Tl0lG0
+!s100 S8N4oZk8l[aD4CC`48d^@3
+R17
+32
+R2
+!i10b 1
+R28
+Z33 !s90 -work|work|Waveform3.vwf.vht|
+Z34 !s107 Waveform3.vwf.vht|
+!i113 0
+R22
+R23
+Aprogramcontroler_demo_arch
+R12
+R13
+DEx4 work 33 programcontroler_demo_vhd_vec_tst 0 22 OPT>`TDI1TBP_US0Tl0lG0
+!i122 29
+l47
+L34 22
+Vd>EQ>L9zJI^Pz`BU9dBj61
+!s100 GZYe71h]zig7c=9bg4o^l2
+R17
+32
+R2
+!i10b 1
+R28
+R33
+R34
+!i113 0
+R22
+R23
+Estatemachinetotimer
+R8
+R10
+R14
+R9
+R25
+R11
+R12
+R13
+R26
+!i122 46
+R1
+R15
+R16
+l0
+R27
+VC5hQaKY1kb6:4SUVjSSK`2
+!s100 [6ba;WGnolXKgUBPT8@>X1
+R17
+32
+Z35 !s110 1717082648
+!i10b 1
+R19
+R20
+R21
+!i113 0
+R22
+R23
+Astructure
+R10
+R14
+R9
+R25
+R11
+R12
+R13
+R26
+DEx4 work 19 statemachinetotimer 0 22 C5hQaKY1kb6:4SUVjSSK`2
+!i122 46
+l613
+L127 7375
+V84RU<R>YRIT;DKEf<^m0Q2
+!s100 DCEaQaSDIG[PNo>F>QX5C1
+R17
+32
+R35
+!i10b 1
+R19
+R20
+R21
+!i113 0
+R22
+R23
+Estatemachinetotimer_vhd_vec_tst
+Z36 w1717082644
+R12
+R13
+!i122 47
+R1
+Z37 8Waveform11.vwf.vht
+Z38 FWaveform11.vwf.vht
+l0
+R32
+V=1DVaQ9WH<_o[TlnI:9cL1
+!s100 E^K0C[fmfma0X?nD8LcH82
+R17
+32
+R35
+!i10b 1
+Z39 !s108 1717082648.000000
+Z40 !s90 -work|work|Waveform11.vwf.vht|
+Z41 !s107 Waveform11.vwf.vht|
+!i113 0
+R22
+R23
+Astatemachinetotimer_arch
+R12
+R13
+DEx4 work 31 statemachinetotimer_vhd_vec_tst 0 22 =1DVaQ9WH<_o[TlnI:9cL1
+!i122 47
+l53
+L34 119
+V<lNaT`59mGA_44[CHiRBj3
+!s100 STJmPinYNI76[LGM8NMZY0
+R17
+32
+R35
+!i10b 1
+R39
+R40
+R41
+!i113 0
+R22
+R23
+Euser_control_demo
+Z42 w1716849184
+R10
+R14
+R9
+R25
+R11
+R12
+R13
+R26
+!i122 32
+R1
+R15
+R16
+l0
+R27
+V2A;PEVdKYkoJT<n3[8>Mj1
+!s100 Y]2=Q2`3C;YZRPl@nTO]U3
+R17
+32
+Z43 !s110 1716849185
+!i10b 1
+Z44 !s108 1716849185.000000
+R20
+R21
+!i113 0
+R22
+R23
+Astructure
+R10
+R14
+R9
+R25
+R11
+R12
+R13
+R26
+DEx4 work 17 user_control_demo 0 22 2A;PEVdKYkoJT<n3[8>Mj1
+!i122 32
+l249
+L126 1618
+V5LHD_mhh6nAYB`7A_?>F[0
+!s100 eNKczS7Pa1GNjcjoajH@S2
+R17
+32
+R43
+!i10b 1
+R44
+R20
+R21
+!i113 0
+R22
+R23
+Euser_control_demo_vhd_vec_tst
+Z45 w1716849182
+R12
+R13
+!i122 33
+R1
+Z46 8Waveform7.vwf.vht
+Z47 FWaveform7.vwf.vht
+l0
+R32
+V0O_^YGGGO4cReKBSeZ>lI1
+!s100 9ZdA3iSMciac[NlBP_^:i3
+R17
+32
+R43
+!i10b 1
+R44
+Z48 !s90 -work|work|Waveform7.vwf.vht|
+Z49 !s107 Waveform7.vwf.vht|
+!i113 0
+R22
+R23
+Auser_control_demo_arch
+R12
+R13
+DEx4 work 29 user_control_demo_vhd_vec_tst 0 22 0O_^YGGGO4cReKBSeZ>lI1
+!i122 33
+l57
+L34 37
+VTkTTDH[HQ>Qk<59=TJhlK2
+!s100 2@DlUc_FImjmOAAaodHVA1
+R17
+32
+R43
+!i10b 1
+R44
+R48
+R49
+!i113 0
+R22
+R23
+Eusercontrol
+Z50 w1716866033
+R10
+R14
+R9
+R25
+R11
+R12
+R13
+R26
+!i122 38
+R1
+R15
+R16
+l0
+R27
+V;F5K;A9Mz1di_HgimUV9E3
+!s100 >?Ankzg[IzjS<Azmj3@mG0
+R17
+32
+R7
+!i10b 1
+Z51 !s108 1716866034.000000
+R20
+R21
+!i113 0
+R22
+R23
+Astructure
+R10
+R14
+R9
+R25
+R11
+R12
+R13
+R26
+DEx4 work 11 usercontrol 0 22 ;F5K;A9Mz1di_HgimUV9E3
+!i122 38
+l288
+L136 2059
+VXQm61fYWhHRd?RVH>MD]h1
+!s100 z6A_U^cn[?RZO?1CCF;;D0
+R17
+32
+R7
+!i10b 1
+R51
+R20
+R21
+!i113 0
+R22
+R23
+Eusercontrol_vhd_vec_tst
+R50
+R12
+R13
+!i122 39
+R1
+Z52 8Waveform9.vwf.vht
+Z53 FWaveform9.vwf.vht
+l0
+R32
+V``^hn1dm:CUJhcn>ke=Ek1
+!s100 EMW4AZMn^VnN5ckWgbG243
+R17
+32
+R7
+!i10b 1
+R51
+Z54 !s90 -work|work|Waveform9.vwf.vht|
+Z55 !s107 Waveform9.vwf.vht|
+!i113 0
+R22
+R23
+Ausercontrol_arch
+R12
+R13
+DEx4 work 23 usercontrol_vhd_vec_tst 0 22 ``^hn1dm:CUJhcn>ke=Ek1
+!i122 39
+l61
+L34 98
+V_3RY^:B0mOdJ1mbIBMfDX2
+!s100 k=T61jYoEi:WFH?gIPTTh1
+R17
+32
+R7
+!i10b 1
+R51
+R54
+R55
+!i113 0
+R22
+R23
