@@ -18,4 +18,3 @@ Licenciatura em Engenharia de Computadores e Informática
 - [Cálculo II - C](1ano/sem2/calculo2)
 - [Matemática Discreta](1ano/sem2/md)
 - [Laboratórios de Informática](1ano/sem2/li)
-- 
