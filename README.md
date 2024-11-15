@@ -11,7 +11,7 @@ Licenciatura em Engenharia de Computadores e Informática
 - [Introdução aos Sistemas Digitais](1ano/sem1/isd)
 - [Introdução à Engenharia Informática](1ano/sem1/iei)
 - [Cálculo I - C](1ano/sem1/c1)
-- [Álgebra Linear e Geometria Analítica A](1ano/sem1/algaa)
+- [Álgebra Linear e Geometria Analítica - A](1ano/sem1/algaa)
 
 #### 2º Semestre
 - [Laboratórios de Sistemas Digitais](1ano/sem2/lsd)
