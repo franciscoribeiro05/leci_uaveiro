@@ -19,3 +19,15 @@ Licenciatura em Engenharia de Computadores e Informática
 - [Matemática Discreta](1ano/sem2/md)
 - [Laboratórios de Informática](1ano/sem2/li)
 - [Programação Orientada a Objetos](1ano/sem2/poo)
+
+### 2º Ano
+
+#### 1º Semestre
+- [Algoritmos e Estruturas de Dados](2ano/sem1/aed)
+- [Arquitetura de Computadores - I](2ano/sem1/ac1)
+- [Redes de Comunicações - I ](2ano/sem1/rc1)
+- [Mecânica e Campo Eletromagnético](2ano/sem1/mce)
+- [Competencias Transferíveis - I](2ano/sem1/cts)
+  - [Design Thinking](2ano/sem1/cts/dt)
+  - [Empreendedorismo e Novos Negócios](2ano/sem1/cts/empreendedorismo)
+  - [Gestão de projetos](2ano/sem1/cts/gp)
