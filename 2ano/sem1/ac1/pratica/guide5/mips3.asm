@@ -5,7 +5,7 @@
 	.eqv print_int,1
 	.data
 str1:	.asciiz "\nIntroduza um número: "
-char1:	.byte '{'
+char1:	.byte'{'
 char2:	.byte '}'
 	.align 2
 lista:	.space 40	# static int lista[SIZE];
@@ -28,8 +28,12 @@ main:	move $t4,$0	# int j = 0;
 	sll $t3,$t3,2
 	
 	la $t5,lista	# lista = $t5;
+	
+	la $s0,char1	# Carregar o valor ascii do char1 em $s0
+	
+	la $s1,char2	# Carregar o valor ascii do char2 em $s0
 		
-whilej:	bge $t4,36,endwj	# while(j < SIZE - 1){
+whilej:	bge $t4,40,endwj	# while(j < SIZE - 1){
 	
 	li $v0,4	# printf("\nIntroduza um número: ")
 	la $a0,str1
@@ -53,10 +57,10 @@ do:			# do{
 	
 	li $t1,0	# int i = 0;
 	
-whilei:	bge $t1,36,endwi	# While(i<size-1){
+whilei:	bge $t1,40,endwi	# While(i<size-1){
 
 	add $t6,$t1,$t5		# &lista + i = $t6
-	addi $t7,$t6,1		# &lista + i + 1 = $t7
+	addi $t7,$t6,4		# &lista + i + 1 = $t7
 	
 	lw $t8, 0($t6)	# $t8 = lista[i];
 	lw $t9, 0($t7)  # $t9 = lista[i + 1];
@@ -82,14 +86,14 @@ endwi:			# }
 
 
 	li $v0,11	# print_char('{');
-	la $a0,char1
+	lb $a0,0($s0)
 	syscall
 	
 
 	move $t4,$0	# int k = 0;
 	la $t5,lista	# $t5 = lista;
 	
-whilek:	bge $t4,36,endwk	#while(k < SIZE - 1){
+whilek:	bge $t4,44,endwk	#while(k < SIZE - 1){
 
 
 	li $v0,print_int	# print_int10(lista[k]);
@@ -103,7 +107,7 @@ endwk:			# }
 
 
 	li $v0,11	# print_char('}');
-	la $a0,char2
+	lb $a0,0($s1)
 	syscall
 	
 	jr $ra		# Fim do programa;

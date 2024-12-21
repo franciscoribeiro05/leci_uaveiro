@@ -1,0 +1,3 @@
+set pcname Aires
+ip 2002:a195:bc82:1001:2050:79ff:fe66:6800/64
+ip auto

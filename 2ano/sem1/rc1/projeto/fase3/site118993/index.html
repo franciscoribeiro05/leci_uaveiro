@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar Inc.</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: #333;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            font-weight: bold;
+            position: relative; /* Para posicionar as imagens absolutas em relação ao body */
+        }
+
+        h1 {
+            font-size: 4rem; /* Aumentado o tamanho do título */
+            color: #06cb6c;
+            margin-bottom: -40spx;
+        }
+
+        h2 {
+            font-size: 2.5rem; /* Aumentado o tamanho das regras */
+            color: #06cb6c;
+            margin-bottom: 20px;
+        }
+
+        img {
+            margin: 20px 0;
+            max-width: 100%;
+            height: auto;
+        }
+
+        ul {
+            text-align: center; /* Alinha o texto ao centro */
+            display: inline-block;
+            margin-top: 10px;
+            font-size: 1.5rem; /* Aumentado o tamanho do texto das regras */
+            line-height: 1.8;
+            list-style-type: none; /* Remove os pontos da lista */
+        }
+
+        .calendar-image img {
+            width: 350px;
+            height: 350px;
+        }
+
+        /* Imagens nos cantos */
+        .corner-image {
+            position: absolute;
+            top: 0;
+            width: 150px; 
+            height: 150px;
+        }
+
+        .corner-left {
+            position: absolute;
+            top: 3cm; /* Movido 2 cm para cima */
+            left: 6.3cm; /* Movido 2 cm para a esquerda */
+            width: 150px; /* Tamanho da imagem */
+            height: 150px; /* Tamanho da imagem */
+            transform: scaleX(-1); /* Espelhamento horizontal */
+            /*aumentar a imagem*/
+            scale: 5;
+}
+
+
+        .corner-right {
+            right: 0;
+            top: 3cm; /* Movido 2 cm para cima */
+            left: 40.8cm; /* Movido 2 cm para a esquerda */
+            width: 150px; /* Tamanho da imagem */
+            height: 150px; /* Tamanho da imagem */
+            scale: 5;
+        }
+    </style>
+</head>
+<body>
+    <!-- Imagens nos cantos -->
+    <img src="canto.png" alt="Canto esquerdo" class="corner-image corner-left">
+    <img src="canto.png" alt="Canto direito" class="corner-image corner-right">
+
+    <h1>Calendar Inc.</h1>
+
+    <div class="calendar-image">
+        <img src="calendario.png" alt="Imagem de um calendário">
+    </div>
+
+    <h2>Regras</h2>
+
+    <ul>
+        <li>1- Ao entrar, verá: "Bem-vindo ao Guess the Number".</li>
+        <li>2- O jogador tenta adivinhar o número secreto.</li>
+        <li>3- Se errar, será informado se o número é maior ou menor.</li>
+        <li>4- Ao acertar, verá: "Parabéns, acertaste!" e perguntará se quer jogar de novo.</li>
+        <li>‎ </li>
+        <li>Francisco Ribeiro ☆</li>
+    </ul>
+</body>
+</html>
