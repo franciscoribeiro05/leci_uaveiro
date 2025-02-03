@@ -1,6 +1,6 @@
 # leci_uaveiro
 
-Licenciatura em Engenharia de Computadores e Informática
+Trabalho desenvolvido durante a Licenciatura em Engenharia de Computadores e Informática no Departamento de Telecomunicações e Informática da Universidade de Aveiro.
 
 ## Índice
 
