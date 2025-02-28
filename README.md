@@ -4,7 +4,7 @@
   <img src="./image_banner.png" alt="Banner">
 </p>
 
-Trabalho desenvolvido durante a Licenciatura em Engenharia de Computadores e Informática no Departamento de Telecomunicações e Informática da Universidade de Aveiro.
+Trabalho desenvolvido durante a Licenciatura em Engenharia de Computadores e Informática no Departamento de Eletrónica, Telecomunicações e Informática da Universidade de Aveiro.
 
 ## Índice
 
