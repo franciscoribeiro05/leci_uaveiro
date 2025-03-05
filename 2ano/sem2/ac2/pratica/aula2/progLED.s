@@ -4,12 +4,14 @@
 	
 main:			# int main(void){
 	
-while_main:	
+	
 	
 	#addiu $sp,$sp,-4	# Fazer crescer a stack
 	#sw $ra,0($sp)		# Guardar o valor de $ra na stack
 	
 	jal configD11		# configD11();
+
+while_main:
 	
 	li $a0,1		# outD11(1);
 	jal outD11
@@ -47,10 +49,10 @@ while_main:
 	li $a0,600		# delay(600);
 	jal delay		
 
+	j while_main
+
 	#lw $ra,0($sp)	# Restaurar o valoe de $ra
 	#addiu $sp,$sp,4	# Colocar o stack pointer onde estava inicialmente
-	
-	j while_main
 
 	li $v0,0	# return 0;
 	jr $ra		# }
